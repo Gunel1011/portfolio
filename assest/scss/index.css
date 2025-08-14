@@ -140,6 +140,14 @@ body {
   background-color: #fff;
 }
 
+.about {
+  display: flex;
+  align-items: center;
+  margin-top: 80px;
+}
+.about .container .row {
+  flex-direction: column;
+}
 .about .container .row .about-me {
   display: flex;
   width: 100%;
@@ -149,32 +157,104 @@ body {
 }
 .about .container .row .about-me .about-content {
   width: 684px;
-  padding: 72px 0 72px 72px;
+  padding: 62px 0 72px 72px;
 }
 .about .container .row .about-me .about-content .title-about {
   font-size: 80px;
   font-weight: 700;
   font-family: "Figtree", sans-serif;
   color: #fff;
-  word-spacing: 12px;
 }
 .about .container .row .about-me .about-content .intro-about {
   font-size: 20px;
   font-weight: 400;
   color: #fff;
-  margin-top: 32px;
+  margin-top: 23px;
 }
 .about .container .row .about-me .about-content .dev-skills {
   display: flex;
   gap: 8px;
+  margin-top: 24px;
+}
+.about .container .row .about-me .about-content .dev-skills .skill {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  padding: 16px 24px;
+  border-radius: 100px;
+}
+.about .container .row .about-me .about-content .dev-skills .skill.blue {
+  background-color: #4198e9;
+}
+.about .container .row .about-me .about-content .dev-skills .skill.green {
+  background-color: #41e98e;
+}
+.about .container .row .about-me .about-content .dev-skills .skill.purple {
+  background-color: #9f41e9;
+}
+.about .container .row .about-me .about-content .dev-skills .skill.red {
+  background-color: #E94141;
+}
+.about .container .row .about-me .about-content .dev-skills .skill.yellow {
+  background-color: #e9c441;
 }
 .about .container .row .about-me .img {
   width: 458px;
   height: 421px;
+  position: relative;
 }
 .about .container .row .about-me .img img {
   width: 100%;
   height: 421px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.about .container .row .all-expernce {
+  display: flex;
+}
+.about .container .row .all-expernce .experince {
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 507px;
+  padding: 64px;
+  border-radius: 32px;
+  margin-top: 16px;
+}
+.about .container .row .all-expernce .experince .experience-list .list-item-exprence {
+  display: flex;
+  align-items: center;
+  gap: 33px;
+  margin-top: 20px;
+}
+.about .container .row .all-expernce .experince .experience-list .list-item-exprence .iocn {
+  width: 46px;
+  height: 46px;
+}
+.about .container .row .all-expernce .experince .experience-list .list-item-exprence .content .text {
+  font-size: 24px;
+  font-weight: 400;
+  color: #fff;
+}
+.about .container .row .all-expernce .experince .experience-list .list-item-exprence .content .year {
+  font-size: 48px;
+  font-weight: 600;
+  color: #fff;
+}
+.about .container .row .all-expernce .swiper {
+  width: 50%;
+  height: 100%;
+}
+.about .container .row .all-expernce .swiper .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about .container .row .all-expernce .swiper .swiper-slide .swiper-slide img {
+  display: block;
+  width: 50%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }/*# sourceMappingURL=index.css.map */

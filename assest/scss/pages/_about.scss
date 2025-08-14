@@ -1,7 +1,11 @@
 @use "../variables" as *;
 .about {
+  display: flex;
+  align-items: center;
+  margin-top: 80px;
   .container {
     .row {
+      flex-direction: column;
       .about-me {
         display: flex;
         width: 100%;
@@ -10,32 +14,108 @@
         border-radius: 32px;
         .about-content {
           width: 684px;
-          padding: 72px 0 72px 72px;
+          padding: 62px 0 72px 72px;
           .title-about {
             font-size: 80px;
             font-weight: 700;
             font-family: "Figtree", sans-serif;
             color: $pureWhite;
-            word-spacing: 12px;
           }
           .intro-about {
             font-size: 20px;
             font-weight: 400;
             color: $pureWhite;
-            margin-top: 32px;
+            margin-top: 23px;
           }
           .dev-skills {
             display: flex;
             gap: 8px;
+            margin-top: 24px;
+            .skill {
+              font-size: 18px;
+              font-weight: 600;
+              color: $pureWhite;
+              padding: 16px 24px;
+              border-radius: 100px;
+              &.blue {
+                background-color: $blue;
+              }
+              &.green {
+                background-color: $green;
+              }
+              &.purple {
+                background-color: $purple;
+              }
+              &.red {
+                background-color: $red;
+              }
+              &.yellow {
+                background-color: $yellow;
+              }
+            }
           }
         }
         .img {
           width: 458px;
           height: 421px;
+          position: relative;
           img {
             width: 100%;
             height: 421px;
             object-fit: cover;
+          }
+        }
+      }
+      .all-expernce {
+        display: flex;
+        .experince {
+          background-color: $white;
+          width: 507px;
+          padding: 64px;
+          border-radius: 32px;
+          margin-top: 16px;
+          .experience-list {
+            .list-item-exprence {
+              display: flex;
+              align-items: center;
+              gap: 33px;
+              margin-top: 20px;
+              .iocn {
+                width: 46px;
+                height: 46px;
+              }
+              .content {
+                .text {
+                  font-size: 24px;
+                  font-weight: 400;
+                  color: $pureWhite;
+                }
+                .year {
+                  font-size: 48px;
+                  font-weight: 600;
+                  color: $pureWhite;
+                }
+              }
+            }
+          }
+        }
+        .swiper {
+          width: 50%;
+          height: 100%;
+          .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #444;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .swiper-slide img {
+              display: block;
+              width: 50%;
+              height: 100%;
+              object-fit: cover;
+            }
           }
         }
       }

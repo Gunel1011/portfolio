@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./assest/scss/index.css" />
     <link
       rel="shortcut icon"
-      href="./assest/img/icons/favicon.ico"
+      href="./assest/img/favicon/favicon.ico"
       type="image/x-icon"
     />
     <title>Gunel</title>
@@ -81,21 +81,101 @@
                   personal and professional life.
                 </p>
                 <div class="dev-skills">
-                  <h5 class="skill">HTML</h5>
-                  <h5 class="skill">Sass</h5>
-                  <h5 class="skill">Css</h5>
-                  <h5 class="skill">Java Script</h5>
-                  <h5 class="skill">React</h5>
+                  <h5 class="skill blue">HTML</h5>
+                  <h5 class="skill green">Sass</h5>
+                  <h5 class="skill red">Css</h5>
+                  <h5 class="skill yellow">Java Script</h5>
+                  <h5 class="skill purple">React</h5>
                 </div>
               </div>
               <div class="img">
+                <div class="shadow"></div>
                 <img src="./assest/img/g2.png" alt="img" />
+              </div>
+            </div>
+            <div class="all-expernce">
+              <div class="experince">
+                <ul class="experience-list">
+                  <!-- list experce  -->
+                  <li class="list-item-exprence">
+                    <div class="iocn">
+                      <img
+                        src="./assest/img/icons/calendar.png"
+                        alt="calendar-icon"
+                      />
+                    </div>
+                    <div class="content">
+                      <p class="text">experience</p>
+                      <h2 class="year">4 years</h2>
+                    </div>
+                  </li>
+                  <!-- list clents  -->
+                  <li class="list-item-exprence">
+                    <div class="iocn">
+                      <img src="./assest/img/icons/user.png" alt="user-icon" />
+                    </div>
+                    <div class="content">
+                      <p class="text">happy</p>
+                      <h2 class="year">87 clients</h2>
+                    </div>
+                  </li>
+                  <!-- list compled -->
+                  <li class="list-item-exprence">
+                    <div class="iocn">
+                      <img
+                        src="./assest/img/icons/html-fiveg-html.png"
+                        alt="html-icon"
+                      />
+                    </div>
+                    <div class="content">
+                      <p class="text">completed</p>
+                      <h2 class="year">98 projects</h2>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">Slide 1</div>
+                  <div class="swiper-slide">Slide 2</div>
+                  <div class="swiper-slide">Slide 3</div>
+                  <div class="swiper-slide">Slide 4</div>
+                  <div class="swiper-slide">Slide 5</div>
+                  <div class="swiper-slide">Slide 6</div>
+                  <div class="swiper-slide">Slide 7</div>
+                  <div class="swiper-slide">Slide 8</div>
+                  <div class="swiper-slide">Slide 9</div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
               </div>
             </div>
           </div>
         </div>
       </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
     <script src="./assest/js/index.js"></script>
   </body>
 </html>
