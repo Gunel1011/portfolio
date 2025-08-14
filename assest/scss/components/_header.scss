@@ -1,0 +1,50 @@
+@use "../variables" as *;
+
+.header {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+  &.toUp {
+    transform: translateY(-100%);
+  }
+  &.todown {
+    transform: translateY(50%);
+  }
+  &.dark {
+    background-color: $dimblack;
+    position: fixed;
+    transform: translateY(0);
+  }
+  .container {
+    .row {
+      justify-content: space-between;
+      align-items: center;
+      .logo {
+        a {
+          color: $pureWhite;
+          font-family: "Figtree", sans-serif;
+          font-size: 32px;
+          font-weight: 600;
+        }
+      }
+      .navbar {
+        .list {
+          display: flex;
+          gap: 12px;
+          .list-item {
+            a {
+              font-family: "Jost", sans-serif;
+              font-size: 18px;
+              font-weight: 400;
+              color: $pureWhite;
+            }
+          }
+        }
+      }
+    }
+  }
+}

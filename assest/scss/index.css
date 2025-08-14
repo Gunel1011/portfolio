@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.container {
+  width: 84%;
+  margin: 0 auto;
+}
+.container .row {
+  display: flex;
+}
+
+body {
+  background-color: #252525;
+}
+
+.header {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+}
+.header.toUp {
+  transform: translateY(-100%);
+}
+.header.todown {
+  transform: translateY(50%);
+}
+.header.dark {
+  background-color: #252525;
+  position: fixed;
+  transform: translateY(0);
+}
+.header .container .row {
+  justify-content: space-between;
+  align-items: center;
+}
+.header .container .row .logo a {
+  color: #fff;
+  font-family: "Figtree", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+}
+.header .container .row .navbar .list {
+  display: flex;
+  gap: 12px;
+}
+.header .container .row .navbar .list .list-item a {
+  font-family: "Jost", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.hero {
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+}
+.hero #introVideo {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6431372549), rgba(0, 0, 0, 0.5764705882));
+  pointer-events: none;
+}
+.hero .container {
+  height: 100%;
+}
+.hero .container .row {
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  gap: 56px;
+}
+.hero .container .row .hero-content {
+  display: flex;
+  align-items: center;
+}
+.hero .container .row .hero-content .hero-title .title {
+  font-weight: 200;
+  font-family: "Figtree", sans-serif;
+  color: #fff;
+  font-size: 160px;
+}
+.hero .container .row .hero-content .intro .name-intro {
+  font-size: 32px;
+  font-weight: 300;
+  color: #fff;
+}
+.hero .container .row .hero-content .intro .intro-role {
+  font-size: 64px;
+  font-weight: 700;
+  color: #fff;
+}
+.hero .container .row .btn {
+  gap: 10px;
+}
+.hero .container .row .btn .touch {
+  border-radius: 32px;
+  padding: 16px 24px;
+  box-shadow: 3px 3px 16px 0px rgba(34, 34, 34, 0.1411764706);
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+  font-family: "Figtree", sans-serif;
+  border: 2px solid #fff;
+  transition: all 0.3s ease;
+}
+.hero .container .row .btn .touch:hover {
+  color: #000;
+  background-color: #fff;
+}
+
+.about .container .row .about-me {
+  display: flex;
+  width: 100%;
+  height: 421px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 32px;
+}
+.about .container .row .about-me .about-content {
+  width: 684px;
+  padding: 72px 0 72px 72px;
+}
+.about .container .row .about-me .about-content .title-about {
+  font-size: 80px;
+  font-weight: 700;
+  font-family: "Figtree", sans-serif;
+  color: #fff;
+  word-spacing: 12px;
+}
+.about .container .row .about-me .about-content .intro-about {
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+  margin-top: 32px;
+}
+.about .container .row .about-me .about-content .dev-skills {
+  display: flex;
+  gap: 8px;
+}
+.about .container .row .about-me .img {
+  width: 458px;
+  height: 421px;
+}
+.about .container .row .about-me .img img {
+  width: 100%;
+  height: 421px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=index.css.map */

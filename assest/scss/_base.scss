@@ -1,0 +1,21 @@
+@use "./variables" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+.container {
+  width: 84%;
+  margin: 0 auto;
+  .row {
+    display: flex;
+  }
+}
+body {
+  background-color: $dimblack;
+}
