@@ -2,8 +2,11 @@
 
 // component
 @use "./components/header";
+@use "./components/footer";
 
 // pages
 
 @use "./pages/hero";
 @use "./pages/about";
+@use "./pages/works";
+@use "./pages/contact";
