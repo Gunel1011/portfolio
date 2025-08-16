@@ -13,6 +13,12 @@
           color: $pureWhite;
           display: flex;
           align-items: center;
+          gap: 10px;
+          transform: scale(1);
+          transition: all 0.4s ease;
+          &:hover {
+            transform: scale(1.1);
+          }
         }
       }
       .footer-icons {
@@ -26,9 +32,13 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          img{
-            width: 12px;
-            height: 12px;
+          transition: all 0.4s ease;
+          &:hover {
+            transform: translateY(-10px);
+          }
+          img {
+            width: 16px;
+            height: 16px;
           }
         }
       }

@@ -37,6 +37,11 @@
           font-weight: 500;
           gap: 12px;
           border: 1px solid $pureWhite;
+          transition: all 0.4s ease;
+          &:hover {
+            background-color: $white;
+            color: $pureWhite;
+          }
         }
 
         .whatsaap {
@@ -49,6 +54,11 @@
           font-size: 24px;
           font-weight: 500;
           gap: 12px;
+          transition: all 0.4s ease;
+          &:hover {
+            background-color: $white;
+            color: $pureWhite;
+          }
         }
       }
     }

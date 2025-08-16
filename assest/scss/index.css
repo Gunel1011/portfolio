@@ -62,6 +62,20 @@ body {
   font-size: 18px;
   font-weight: 400;
   color: #fff;
+  position: relative;
+}
+.header .container .row .navbar .list .list-item a::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  left: 0;
+  bottom: -2px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+.header .container .row .navbar .list .list-item a:hover::after {
+  width: 100%;
 }
 
 .footer {
@@ -80,6 +94,12 @@ body {
   color: #fff;
   display: flex;
   align-items: center;
+  gap: 10px;
+  transform: scale(1);
+  transition: all 0.4s ease;
+}
+.footer .container .row .contact-footer a:hover {
+  transform: scale(1.1);
 }
 .footer .container .row .footer-icons {
   margin-top: 16px;
@@ -93,10 +113,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.4s ease;
+}
+.footer .container .row .footer-icons a:hover {
+  transform: translateY(-10px);
 }
 .footer .container .row .footer-icons a img {
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
 }
 
 .hero {
@@ -279,23 +303,63 @@ body {
   color: #fff;
 }
 .about .container .row .all-expernce .swiper {
-  width: 50%;
+  width: 717px;
   height: 100%;
+  margin-top: 16px;
+  border-radius: 32px;
+  margin-left: 16px;
 }
 .about .container .row .all-expernce .swiper .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #444;
+  background: rgba(255, 255, 255, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.about .container .row .all-expernce .swiper .swiper-slide .swiper-slide img {
-  display: block;
-  width: 50%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+.about .container .row .all-expernce .swiper .swiper-slide .all-card .icon {
+  text-align: start;
+  margin-top: 12px;
+}
+.about .container .row .all-expernce .swiper .swiper-slide .all-card .icon img {
+  width: 111px;
+  height: 96px;
+}
+.about .container .row .all-expernce .swiper .swiper-slide .all-card .testimonil {
+  padding: 20px 72px 0 72px;
+}
+.about .container .row .all-expernce .swiper .swiper-slide .all-card .testimonil .text {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 140%;
+  color: #fff;
+  text-align: start;
+}
+.about .container .row .all-expernce .swiper .swiper-slide .all-card .person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 32px 0 64px 72px;
+}
+.about .container .row .all-expernce .swiper .swiper-slide .all-card .person .person-img {
+  width: 64px;
+  height: 64px;
+}
+.about .container .row .all-expernce .swiper .swiper-slide .all-card .person .person-img img {
+  width: 100%;
+  height: 64px;
+  border-radius: 50%;
+}
+.about .container .row .all-expernce .swiper .swiper-slide .all-card .person .person-info .person-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  text-align: start;
+}
+.about .container .row .all-expernce .swiper .swiper-slide .all-card .person .person-info .person-work {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
 }
 
 .works .container .row {
@@ -382,6 +446,11 @@ body {
   font-weight: 500;
   gap: 12px;
   border: 1px solid #fff;
+  transition: all 0.4s ease;
+}
+.contact .container .row .contact-btn .email:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
 }
 .contact .container .row .contact-btn .whatsaap {
   display: flex;
@@ -393,4 +462,9 @@ body {
   font-size: 24px;
   font-weight: 500;
   gap: 12px;
+  transition: all 0.4s ease;
+}
+.contact .container .row .contact-btn .whatsaap:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
 }/*# sourceMappingURL=index.css.map */
