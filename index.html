@@ -46,6 +46,7 @@
     <main>
       <!-- hero section  -->
       <section class="hero">
+        <div class="form-overley"></div>
         <video id="introVideo" muted autoplay loop>
           <source src="./assest/video/hero-bg.mp4" type="video/mp4" />
         </video>
@@ -64,6 +65,54 @@
             <div class="btn">
               <a class="touch" href="#">Get in touch</a>
             </div>
+            <!-- form  -->
+            <form class="form">
+              <div class="glass-card">
+                <h2 class="form-send">Send a Message</h2>
+
+                <!-- first-name -->
+                <label for="first-name">Name</label>
+                <input
+                  placeholder="Gunel"
+                  type="text"
+                  name="first-name"
+                  id="first-name"
+                />
+                <p class="first-name-requat"></p>
+
+                <!-- surname  -->
+                <label for="surname">Surname</label>
+                <input
+                  placeholder="Mammadova"
+                  type="text"
+                  name="surname"
+                  id="surname"
+                />
+                <p class="surname-requat"></p>
+
+                <!-- email  -->
+                <label for="gamil">Email</label>
+                <input
+                  placeholder="yourEamil@gmail.com"
+                  type="email"
+                  name="gmail"
+                  id="gamil"
+                />
+                <p class="email-requat"></p>
+
+                <!-- message  -->
+                <label for="message">Message</label>
+                <textarea
+                  placeholder="Write message"
+                  name="message"
+                  id="message"
+                ></textarea>
+                <p class="textarea-requat"></p>
+
+                <!-- button  -->
+                <button id="form-btn">Send</button>
+              </div>
+            </form>
           </div>
         </div>
       </section>
@@ -73,28 +122,9 @@
         <div class="container">
           <div class="row">
             <div class="about-me">
-              <div class="about-content">
-                <h2 class="title-about">Who am I?</h2>
-                <p class="intro-about">
-                  I am an aspiring Frontend developer passionate about
-                  understanding how computers work and solving coding
-                  challenges. I am result-oriented and persistent, never
-                  stopping until a problem is fully resolved. In my free time, I
-                  enjoy handmade art and drawing. My main goal is to keep moving
-                  forward, continuously learning, and achieving success in both
-                  personal and professional life.
-                </p>
-                <div class="dev-skills">
-                  <h5 class="skill blue">HTML</h5>
-                  <h5 class="skill green">Sass</h5>
-                  <h5 class="skill red">Css</h5>
-                  <h5 class="skill yellow">Java Script</h5>
-                  <h5 class="skill purple">React</h5>
-                </div>
-              </div>
+              <div class="about-content"></div>
               <div class="img">
                 <div class="shadow"></div>
-                <img src="./assest/img/g2.png" alt="img" />
               </div>
             </div>
             <div class="all-expernce" id="services">

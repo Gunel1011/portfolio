@@ -132,6 +132,17 @@ body {
   right: 0;
   height: 100vh;
 }
+.hero .form-overley {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3843137255);
+  display: none;
+  z-index: 8888;
+}
+.hero .form-overley.block {
+  display: block;
+}
 .hero #introVideo {
   width: 100%;
   height: 100%;
@@ -148,9 +159,6 @@ body {
   height: 100%;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6431372549), rgba(0, 0, 0, 0.5764705882));
   pointer-events: none;
-}
-.hero .container {
-  height: 100%;
 }
 .hero .container .row {
   height: 100%;
@@ -201,6 +209,90 @@ body {
 .hero .container .row .btn .touch:hover {
   color: #000;
   background-color: #fff;
+}
+.hero .container .row .form {
+  position: absolute;
+  z-index: 99999;
+  display: none;
+  position: fixed;
+  top: 30px;
+  letter-spacing: 50%;
+}
+.hero .container .row .form.block {
+  display: block;
+}
+.hero .container .row .form .glass-card {
+  width: 500px;
+  background: rgba(255, 255, 255, 0.17);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 rgba(255, 255, 255, 0.1), inset 0 0 6px 3px rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.hero .container .row .form .glass-card .form-send {
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+}
+.hero .container .row .form .glass-card label {
+  color: #fff;
+  margin: 10px 0;
+}
+.hero .container .row .form .glass-card textarea {
+  width: 100%;
+  max-width: 100%;
+  resize: none;
+  overflow-y: auto;
+  padding: 10px;
+  height: 150px;
+  border-radius: 10px;
+}
+.hero .container .row .form .glass-card input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+.hero .container .row .form .glass-card #form-btn {
+  padding: 10px 0;
+  width: 30%;
+  border-radius: 40px;
+  border: 1px solid #fff;
+  transition: all 0.4s ease;
+  font-weight: 400;
+  font-size: 17px;
+  margin-top: 10px;
+}
+.hero .container .row .form .glass-card #form-btn:hover {
+  background-color: rgba(37, 37, 37, 0.0784313725);
+  color: #fff;
+}
+.hero .container .row .form .glass-card p {
+  color: #E94141;
+  margin-top: 5px;
+}
+.hero .container .row .form .glass-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+}
+.hero .container .row .form .glass-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), transparent, rgba(255, 255, 255, 0.3));
 }
 
 .about {
