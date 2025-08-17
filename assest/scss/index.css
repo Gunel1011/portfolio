@@ -374,6 +374,10 @@ body {
   border-radius: 32px;
   margin-top: 16px;
 }
+.about .container .row .all-expernce .experince .experience-list {
+  display: flex;
+  flex-direction: column;
+}
 .about .container .row .all-expernce .experince .experience-list .list-item-exprence {
   display: flex;
   align-items: center;
@@ -408,6 +412,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 450px;
 }
 .about .container .row .all-expernce .swiper .swiper-slide .all-card .icon {
   text-align: start;

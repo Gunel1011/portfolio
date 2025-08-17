@@ -13,12 +13,60 @@ const message = document.querySelector("#message");
 const textareaRequat = document.querySelector(".textarea-requat");
 const aboutContent = document.querySelector(".about-content");
 const img = document.querySelector(".img");
-
+const experienceList = document.querySelector(".experience-list");
+const swiperSlide = document.querySelector(".swiper-wrapper");
 const data = [
   {
+    img: "./assest/img/g2.png",
     bio: "I am an aspiring Frontend developer passionate about understanding how computers work and solving coding challenges. I am result-oriented and persistent, never stopping until a problem is fully resolved. In my free time, I enjoy handmade art and drawing. My main goal is to keep moving forward, continuously learning, and achieving success in both personal and professional life.",
     skills: ["HTML", "CSS", "JavaScript", "React", "Sass"],
-    img: "./assest/img/g2.png",
+  },
+];
+const data2 = [
+  {
+    imgExperce: "./assest/img/icons/calendar.png",
+    experceTitle: "experience",
+    experceYear: "1 years",
+  },
+  {
+    imgExperce: "./assest/img/icons/user.png",
+    experceTitle: "happy",
+    experceYear: "50 clients",
+  },
+  {
+    imgExperce: "./assest/img/icons/html-fiveg-html.png",
+    experceTitle: "completed",
+    experceYear: "8 projects",
+  },
+];
+const testimonil = [
+  {
+    iconImg: "./assest/img/icons/“.png",
+    text: "Working with this developer was a game-changer for ourproject. Their attention to detail and creativity truly set them apart. After a few weeks he impressed the entire team so much.",
+    personImg: "./assest/img/person.jpg",
+    personName: "Gambar Shamsiyev",
+    personWork: "Project Manager at YevlaxTech",
+  },
+  {
+    iconImg: "./assest/img/icons/“.png",
+    text: "Working with this developer was a game-changer for ourproject. Their attention to detail and creativity truly set them apart. After a few weeks he impressed the entire team so much.",
+    personImg: "./assest/img/person.jpg",
+    personName: "Gambar Shamsiyev",
+    personWork: "Project Manager at YevlaxTech",
+  },
+  {
+    iconImg: "./assest/img/icons/“.png",
+    text: "Working with this developer was a game-changer for ourproject. Their attention to detail and creativity truly set them apart. After a few weeks he impressed the entire team so much.",
+    personImg: "./assest/img/person.jpg",
+    personName: "Gambar Shamsiyev",
+    personWork: "Project Manager at YevlaxTech",
+  },
+  {
+    iconImg: "./assest/img/icons/“.png",
+    text: "Working with this developer was a game-changer for ourproject. Their attention to detail and creativity truly set them apart. After a few weeks he impressed the entire team so much.",
+    personImg: "./assest/img/person.jpg",
+    personName: "Gambar Shamsiyev",
+    personWork: "Project Manager at YevlaxTech",
   },
 ];
 
@@ -128,3 +176,52 @@ const writeHtml = () => {
   });
 };
 writeHtml();
+
+// list experce write
+
+const writeHtmlExperce = () => {
+  experienceList.innerHTML = "";
+  data2.map((item) => {
+    experienceList.innerHTML += `
+   <li class="list-item-exprence">
+     <div class="iocn">
+        <img src="${item.imgExperce}" alt="calendar-icon"/>
+        </div>
+        <div class="content">
+        <p class="text">${item.experceTitle}</p>
+         <h2 class="year">${item.experceYear}</h2>
+      </div>
+    </li>
+    `;
+  });
+};
+writeHtmlExperce();
+
+// testimonil write
+const testimonialsWriteHtml = () => {
+  swiperSlide.innerHTML = "";
+  testimonil.map((item) => {
+    swiperSlide.innerHTML += `
+   <div class="swiper-slide">
+    <div class="all-card">
+        <div class="icon">
+           <img src="${item.iconImg}" alt="iconImg" />
+         </div>
+        <div class="testimonil">
+           <h2 class="text">${item.text}</h2>
+         </div>
+        <div class="person">
+           <div class="person-img">
+             <img src="${item.personImg}" alt="personImg" />
+            </div>
+         <div class="person-info">
+            <h3 class="person-name">${item.personName}</h3>
+            <p class="person-work">${item.personWork}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    `;
+  });
+};
+testimonialsWriteHtml();

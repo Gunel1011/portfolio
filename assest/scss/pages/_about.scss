@@ -75,6 +75,8 @@
           border-radius: 32px;
           margin-top: 16px;
           .experience-list {
+            display: flex;
+            flex-direction: column;
             .list-item-exprence {
               display: flex;
               align-items: center;
@@ -112,6 +114,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 450px;
             .all-card {
               .icon {
                 text-align: start;
