@@ -15,6 +15,10 @@ const aboutContent = document.querySelector(".about-content");
 const img = document.querySelector(".img");
 const experienceList = document.querySelector(".experience-list");
 const swiperSlide = document.querySelector(".swiper-wrapper");
+const workRe = document.querySelector(".work-re");
+const contactBtn = document.querySelector(".contact-btn");
+const contactFooter = document.querySelector(".contact-footer");
+
 const data = [
   {
     img: "./assest/img/g2.png",
@@ -67,6 +71,58 @@ const testimonil = [
     personImg: "./assest/img/person.jpg",
     personName: "Gambar Shamsiyev",
     personWork: "Project Manager at YevlaxTech",
+  },
+];
+const workData = [
+  {
+    link: "https://github.com/Gunel1011/world-telecom",
+    workImg: "/assest/img/world-telecom.jpg",
+  },
+  {
+    link: "https://clark-two.vercel.app/",
+    workImg: "./assest/img/clark.jpg",
+  },
+  {
+    link: "https://avo-beige.vercel.app/",
+    workImg: "./assest/img/avo.jpg",
+  },
+  {
+    link: "https://passport-zo4r.vercel.app/",
+    workImg: "./assest/img/oneder.jpg",
+  },
+  {
+    link: "https://passport-psi.vercel.app/",
+    workImg: "./assest/img/passport.jpg",
+  },
+  {
+    link: "https://ronald-orcin.vercel.app/",
+    workImg: "./assest/img/ronaldo.jpg",
+  },
+];
+const contactData = [
+  {
+    gmailAddres: "gunelmm10@gmail.com",
+    gmailIcon: "./assest/img/icons/email.png",
+    clasName: "email",
+    text: "Send an email",
+  },
+  {
+    whatsapAddres: "https://wa.me/994519957262",
+    whatsapcon: "./assest/img/icons/what.png",
+    clasName: "whatsaap",
+    text: "Write on Whatsapp",
+  },
+];
+const footerData = [
+  {
+    contact: "(+994 51) 995 72 62",
+    icon: "./assest/img/icons/phone.png",
+    contactAdres: "https://wa.me/994519957262",
+  },
+  {
+    contact: "gunelmm10@gmail.com",
+    icon: "./assest/img/icons/white-mail.png",
+    contactAdres: "mailto:gunelmm10@gmail.com",
   },
 ];
 
@@ -225,3 +281,88 @@ const testimonialsWriteHtml = () => {
   });
 };
 testimonialsWriteHtml();
+
+// work write Html
+const workWriteHtml = () => {
+  workRe.innerHTML = "";
+  workData.map((item) => {
+    workRe.innerHTML += `
+      <div class="img-work">
+         <a href="${item.link}" target="_blank" >
+           <img src="${item.workImg}" alt="work_img" />
+          </a>
+       </div>
+  `;
+  });
+};
+workWriteHtml();
+
+// contact write
+
+const contactWriteHtml = () => {
+  contactBtn.innerHTML = "";
+  contactData.map((item) => {
+    contactBtn.innerHTML += `
+     <a class="${item.clasName}" href="mailto:${item.gmailAddres}"
+         target="_blank">
+       <img src="${item.gmailIcon}" alt="" />
+       ${item.text}
+     </a>
+    `;
+  });
+};
+contactWriteHtml();
+
+// footer write
+const footerWriteHtml = () => {
+  contactFooter.innerHTML = "";
+  footerData.map((item) => {
+    contactFooter.innerHTML += `
+    <a class="footer-email" target="_blank" href="${item.contactAdres}">
+      <img src="${item.icon}" alt="" />
+        ${item.contact}
+      </a>
+    `;
+  });
+};
+footerWriteHtml();
+
+const userData = {
+  about: "",
+  avatar_image: "",
+  experience: 2025,
+  happy_clients: 50,
+  completed_projects: 8,
+  email: "",
+  phone_number: "",
+  skills: [
+    {
+      id: 1,
+      skill: "HTML",
+      background_color: "#0000ff",
+    },
+  ],
+  social_media_links: [
+    {
+      id: 1,
+      url: "",
+      icon: "",
+    },
+  ],
+  testimonials: [
+    {
+      id: 1,
+      avatar: "",
+      full_name: "",
+      comment: "",
+      profession: "",
+    },
+  ],
+  projects: [
+    {
+      id: 1,
+      project_cover_image: "",
+      project_url: "",
+    },
+  ],
+};

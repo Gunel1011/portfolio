@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assest/scss/index.css" />
+    <title>Admin panel</title>
+  </head>
+  <body>
+    <!-- header  -->
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="logo">
+            <a href="./admin.html">Admin</a>
+          </div>
+          <nav class="navbar">
+            <ul class="list">
+              <li class="list-item">
+                <a href="#project">Projects</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="admin-project">
+        <div class="container">
+          <div class="row">
+            <div class="all-card"></div>
+          </div>
+        </div>
+      </section>
+      <section class="modal">
+        <div class="moadal-overley"></div>
+        <form class="adminEditForm">
+          <div class="title">
+            <h2>Edit form</h2>
+            <span class="close" onclick="closeModal()">X</span>
+          </div>
+          <div class="inp">
+            <label for="project_name">Proektin adi</label>
+            <input type="text" name="project_name" id="project_name" />
+          </div>
+          <div class="inp">
+            <label for="project_name">Proektin adi</label>
+            <input type="text" name="project_name" id="project_name" />
+          </div>
+          <div class="inp">
+            <label for="project_name">Proektin adi</label>
+            <input type="text" name="project_name" id="project_name" />
+          </div>
+          <button class="btn">sda</button>
+        </form>
+      </section>
+    </main>
+    <script src="./assest/js/admin.js"></script>
+  </body>
+</html>

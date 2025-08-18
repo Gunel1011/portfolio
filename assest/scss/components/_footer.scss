@@ -1,6 +1,6 @@
 @use "../variables" as *;
 .footer {
-  margin-top: 64px;
+  margin: 64px 0;
   .container {
     .row {
       justify-content: center;
@@ -10,6 +10,7 @@
         display: flex;
         gap: 42px;
         a {
+          font-size: 20px;
           color: $pureWhite;
           display: flex;
           align-items: center;
@@ -22,7 +23,7 @@
         }
       }
       .footer-icons {
-        margin-top: 16px;
+        margin-top: 30px;
         display: flex;
         gap: 12px;
         a {
