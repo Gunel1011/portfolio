@@ -11,6 +11,7 @@ html {
   list-style: none;
   box-sizing: border-box;
   text-decoration: none;
+  cursor: none !important;
 }
 .container {
   width: 84%;
@@ -21,4 +22,14 @@ html {
 }
 body {
   background-color: $dimblack;
+}
+
+.cursor {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(#5a5b5e, #38383a);
+  pointer-events: none;
+  z-index: 9999999;
 }

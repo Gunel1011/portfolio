@@ -9,6 +9,7 @@ html {
   list-style: none;
   box-sizing: border-box;
   text-decoration: none;
+  cursor: none !important;
 }
 
 .container {
@@ -21,6 +22,16 @@ html {
 
 body {
   background-color: #252525;
+}
+
+.cursor {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(#5a5b5e, #38383a);
+  pointer-events: none;
+  z-index: 9999999;
 }
 
 .header {
@@ -76,6 +87,9 @@ body {
 }
 .header .container .row .navbar .list .list-item a:hover::after {
   width: 100%;
+}
+.header .container .row .navbar .list .list-item.active a {
+  color: red;
 }
 
 .footer {
@@ -338,6 +352,7 @@ body {
   color: #fff;
   padding: 16px 24px;
   border-radius: 100px;
+  cursor: pointer;
 }
 .about .container .row .about-me .about-content .dev-skills .skill.blue {
   background-color: #4198e9;
@@ -550,7 +565,7 @@ body {
   background-color: rgba(255, 255, 255, 0.2);
   color: #fff;
 }
-.contact .container .row .contact-btn .whatsaap {
+.contact .container .row .contact-btn .whatsapp {
   display: flex;
   align-items: center;
   padding: 16px 24px;
@@ -562,9 +577,16 @@ body {
   gap: 12px;
   transition: all 0.4s ease;
 }
-.contact .container .row .contact-btn .whatsaap:hover {
+.contact .container .row .contact-btn .whatsapp:hover {
   background-color: rgba(255, 255, 255, 0.2);
   color: #fff;
+}
+
+.header .container .row .navbar .list .list-item #btn-new {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 1px solid black;
+  cursor: pointer;
 }
 
 .admin-project {
@@ -574,7 +596,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 50px 20px;
-  justify-content: space-between;
 }
 .admin-project .container .row .all-card .card {
   position: relative;
@@ -595,12 +616,35 @@ body {
 .admin-project .container .row .all-card .card .card-admin-img .btn {
   display: none;
 }
-.admin-project .container .row .all-card .card .card-admin-img:hover .all-content-admin .overler {
-  background: linear-gradient(rgba(0, 0, 0, 0.3647058824));
-  width: 340px;
-  height: 100%;
-  position: absolute;
-  border-radius: 20px;
+.admin-project .container .row .all-card .card .card-admin-img .title {
+  display: none;
+  height: 300px;
+  transition: all 0.4s ease;
+}
+.admin-project .container .row .all-card .card .card-admin-img .data {
+  display: none;
+}
+.admin-project .container .row .all-card .card .card-admin-img:hover .all-content-admin {
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: slideDownFade 0.6s ease-out forwards;
+  background: linear-gradient(rgba(0, 0, 0, 0.8235294118));
+  border-radius: 20px 20px 0 0;
+}
+@keyframes slideDownFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.admin-project .container .row .all-card .card .card-admin-img:hover .all-content-admin .title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
 }
 .admin-project .container .row .all-card .card .card-admin-img:hover .all-content-admin .btn {
   height: 100%;
@@ -615,6 +659,12 @@ body {
   border: 1px solid #000;
   border-radius: 10px;
   cursor: pointer;
+}
+.admin-project .container .row .all-card .card .card-admin-img:hover .all-content-admin .data {
+  display: flex;
+  justify-content: end;
+  color: #fff;
+  padding: 0 10px 0 0;
 }
 
 .modal {
@@ -641,11 +691,12 @@ body {
   display: flex;
 }
 .modal .adminEditForm {
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  width: 75%;
-  max-height: 60vh;
+  width: 50%;
+  max-height: 70vh;
   padding: 16px;
   background-color: #ffffff;
 }
@@ -688,4 +739,11 @@ body {
 }
 .modal .adminEditForm .btn:hover {
   opacity: 0.7;
+}
+.modal .adminEditForm .inp .error-text-name,
+.modal .adminEditForm .inp .error-text-data,
+.modal .adminEditForm .inp .error-text-img {
+  color: #E94141;
+  font-size: 12px;
+  min-height: 16px;
 }/*# sourceMappingURL=index.css.map */

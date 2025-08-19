@@ -8,6 +8,7 @@
   </head>
   <body>
     <!-- header  -->
+    <div class="cursor"></div>
     <header class="header">
       <div class="container">
         <div class="row">
@@ -17,7 +18,7 @@
           <nav class="navbar">
             <ul class="list">
               <li class="list-item">
-                <a href="#project">Projects</a>
+                <button id="btn-new">+ new</button>
               </li>
             </ul>
           </nav>
@@ -41,18 +42,21 @@
             <span class="close" onclick="closeModal()">X</span>
           </div>
           <div class="inp">
-            <label for="project_name">Proektin adi</label>
+            <label for="project_name">Project Name</label>
             <input type="text" name="project_name" id="project_name" />
+            <p class="error-text-name"></p>
           </div>
           <div class="inp">
-            <label for="project_name">Proektin adi</label>
-            <input type="text" name="project_name" id="project_name" />
+            <label for="data">Date added</label>
+            <input type="date" name="data" id="data" />
+            <p class="error-text-data"></p>
           </div>
           <div class="inp">
-            <label for="project_name">Proektin adi</label>
-            <input type="text" name="project_name" id="project_name" />
+            <label for="project_img">Project image</label>
+            <input type="file" name="project_img" id="project_img" />
+            <p class="error-text-img"></p>
           </div>
-          <button class="btn">sda</button>
+          <button class="btn">Save changes</button>
         </form>
       </section>
     </main>

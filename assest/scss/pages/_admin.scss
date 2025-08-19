@@ -1,4 +1,22 @@
 @use "../variables" as *;
+.header {
+  .container {
+    .row {
+      .navbar {
+        .list {
+          .list-item {
+            #btn-new {
+              padding: 10px 20px;
+              border-radius: 20px;
+              border: 1px solid black;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 .admin-project {
   margin-top: 90px;
   .container {
@@ -7,7 +25,6 @@
         display: flex;
         flex-wrap: wrap;
         gap: 50px 20px;
-        justify-content: space-between;
         .card {
           position: relative;
           width: calc(33.333% - 20px);
@@ -25,14 +42,35 @@
             .btn {
               display: none;
             }
+            .title {
+              display: none;
+              height: 300px;
+              transition: all 0.4s ease;
+            }
+            .data {
+              display: none;
+            }
             &:hover {
               .all-content-admin {
-                .overler {
-                  background: linear-gradient(#0000005d);
-                  width: 340px;
-                  height: 100%;
-                  position: absolute;
-                  border-radius: 20px;
+                opacity: 0;
+                transform: translateY(-30px);
+                animation: slideDownFade 0.6s ease-out forwards;
+                background: linear-gradient(#000000d2);
+                border-radius: 20px 20px 0 0;
+                @keyframes slideDownFade {
+                  to {
+                    opacity: 1;
+                    transform: translateY(0);
+                  }
+                }
+                .title {
+                  color: $pureWhite;
+                  font-size: 20px;
+                  font-weight: 600;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  height: 200px;
                 }
                 .btn {
                   height: 100%;
@@ -47,6 +85,12 @@
                     border-radius: 10px;
                     cursor: pointer;
                   }
+                }
+                .data {
+                  display: flex;
+                  justify-content: end;
+                  color: $pureWhite;
+                  padding: 0 10px 0 0;
                 }
               }
             }
@@ -80,6 +124,7 @@
     display: flex;
   }
   .adminEditForm {
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -97,8 +142,8 @@
         }
       }
     }
-    width: 75%;
-    max-height: 60vh;
+    width: 50%;
+    max-height: 70vh;
     padding: 16px;
     background-color: #ffffff;
     .inp {
@@ -125,6 +170,15 @@
       color: #ffffff;
       &:hover {
         opacity: 0.7;
+      }
+    }
+    .inp {
+      .error-text-name,
+      .error-text-data,
+      .error-text-img {
+        color: #E94141;
+        font-size: 12px;
+        min-height: 16px;
       }
     }
   }

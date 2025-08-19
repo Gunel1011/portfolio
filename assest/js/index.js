@@ -17,114 +17,159 @@ const experienceList = document.querySelector(".experience-list");
 const swiperSlide = document.querySelector(".swiper-wrapper");
 const workRe = document.querySelector(".work-re");
 const contactBtn = document.querySelector(".contact-btn");
-const contactFooter = document.querySelector(".contact-footer");
+const contactFooter = document.querySelector(".footer-icons");
+const contactFooters = document.querySelector(".contact-footer");
+const aboutList = document.querySelector(".about-list");
+const project = document.querySelector(".project");
+const services = document.querySelector(".services");
+const conctact = document.querySelector(".conctact");
+const cursor = document.querySelector(".cursor");
 
-const data = [
-  {
-    img: "./assest/img/g2.png",
-    bio: "I am an aspiring Frontend developer passionate about understanding how computers work and solving coding challenges. I am result-oriented and persistent, never stopping until a problem is fully resolved. In my free time, I enjoy handmade art and drawing. My main goal is to keep moving forward, continuously learning, and achieving success in both personal and professional life.",
-    skills: ["HTML", "CSS", "JavaScript", "React", "Sass"],
-  },
-];
-const data2 = [
-  {
-    imgExperce: "./assest/img/icons/calendar.png",
-    experceTitle: "experience",
-    experceYear: "1 years",
-  },
-  {
-    imgExperce: "./assest/img/icons/user.png",
-    experceTitle: "happy",
-    experceYear: "50 clients",
-  },
-  {
-    imgExperce: "./assest/img/icons/html-fiveg-html.png",
-    experceTitle: "completed",
-    experceYear: "8 projects",
-  },
-];
-const testimonil = [
-  {
-    iconImg: "./assest/img/icons/“.png",
-    text: "Working with this developer was a game-changer for ourproject. Their attention to detail and creativity truly set them apart. After a few weeks he impressed the entire team so much.",
-    personImg: "./assest/img/person.jpg",
-    personName: "Gambar Shamsiyev",
-    personWork: "Project Manager at YevlaxTech",
-  },
-  {
-    iconImg: "./assest/img/icons/“.png",
-    text: "Working with this developer was a game-changer for ourproject. Their attention to detail and creativity truly set them apart. After a few weeks he impressed the entire team so much.",
-    personImg: "./assest/img/person.jpg",
-    personName: "Gambar Shamsiyev",
-    personWork: "Project Manager at YevlaxTech",
-  },
-  {
-    iconImg: "./assest/img/icons/“.png",
-    text: "Working with this developer was a game-changer for ourproject. Their attention to detail and creativity truly set them apart. After a few weeks he impressed the entire team so much.",
-    personImg: "./assest/img/person.jpg",
-    personName: "Gambar Shamsiyev",
-    personWork: "Project Manager at YevlaxTech",
-  },
-  {
-    iconImg: "./assest/img/icons/“.png",
-    text: "Working with this developer was a game-changer for ourproject. Their attention to detail and creativity truly set them apart. After a few weeks he impressed the entire team so much.",
-    personImg: "./assest/img/person.jpg",
-    personName: "Gambar Shamsiyev",
-    personWork: "Project Manager at YevlaxTech",
-  },
-];
-const workData = [
-  {
-    link: "https://github.com/Gunel1011/world-telecom",
-    workImg: "/assest/img/world-telecom.jpg",
-  },
-  {
-    link: "https://clark-two.vercel.app/",
-    workImg: "./assest/img/clark.jpg",
-  },
-  {
-    link: "https://avo-beige.vercel.app/",
-    workImg: "./assest/img/avo.jpg",
-  },
-  {
-    link: "https://passport-zo4r.vercel.app/",
-    workImg: "./assest/img/oneder.jpg",
-  },
-  {
-    link: "https://passport-psi.vercel.app/",
-    workImg: "./assest/img/passport.jpg",
-  },
-  {
-    link: "https://ronald-orcin.vercel.app/",
-    workImg: "./assest/img/ronaldo.jpg",
-  },
-];
-const contactData = [
-  {
-    gmailAddres: "gunelmm10@gmail.com",
-    gmailIcon: "./assest/img/icons/email.png",
-    clasName: "email",
-    text: "Send an email",
-  },
-  {
-    whatsapAddres: "https://wa.me/994519957262",
-    whatsapcon: "./assest/img/icons/what.png",
-    clasName: "whatsaap",
-    text: "Write on Whatsapp",
-  },
-];
-const footerData = [
-  {
-    contact: "(+994 51) 995 72 62",
-    icon: "./assest/img/icons/phone.png",
-    contactAdres: "https://wa.me/994519957262",
-  },
-  {
-    contact: "gunelmm10@gmail.com",
-    icon: "./assest/img/icons/white-mail.png",
-    contactAdres: "mailto:gunelmm10@gmail.com",
-  },
-];
+const userData = {
+  about:
+    "I am an aspiring Frontend developer passionate about understanding how computers work and solving coding challenges. I am result-oriented and persistent, never stopping until a problem is fully resolved. In my free time, I enjoy handmade art and drawing. My main goal is to keep moving forward, continuously learning, and achieving success in both personal and professional life.",
+  avatar_image: "./assest/img/g2.png",
+  experience: 1,
+  happy_clients: 50,
+  completed_projects: 7,
+  email: "gunelmm10@gmail.com",
+  phone_number: "(+994 51) 995 72 62",
+  skills: [
+    { id: 1, skill: "HTML", background_color: "#e34c26" },
+    { id: 2, skill: "CSS", background_color: "#264de4" },
+    { id: 3, skill: "JavaScript", background_color: "#f0db4f" },
+    { id: 4, skill: "React", background_color: "#61dbfb" },
+    { id: 5, skill: "Sass", background_color: "#cc6699" },
+  ],
+  social_media_links: [
+    {
+      id: 1,
+      url: "mailto:gunelmm10@gmail.com",
+      icon: "./assest/img/icons/email.png",
+      className: "email",
+      text: "Send an Email",
+    },
+    {
+      id: 2,
+      url: "https://wa.me/994519957262",
+      icon: "./assest/img/icons/what.png",
+      className: "whatsapp",
+      text: "Write on WhatsApp",
+    },
+  ],
+  social_media_links_fotter: [
+    {
+      id: 1,
+      url: "https://www.instagram.com/silentz_gun/",
+      icon: "./assest/img/icons/instagram.png",
+      className: "instagram",
+      text: "Instagram",
+    },
+    {
+      id: 2,
+      url: "https://www.facebook.com/GünelMəmmədova/",
+      icon: "./assest/img/icons/facebook.png",
+      className: "facebook",
+      text: "Facebook",
+    },
+    {
+      id: 3,
+      url: "https://www.linkedin.com/gunel-mammadova10/",
+      icon: "./assest/img/icons/linkedin.png",
+      className: "linkedin",
+      text: "LinkedIn",
+    },
+  ],
+  contact_footer: [
+    {
+      id: 1,
+      class: "footer-phone",
+      img_url: "./assest/img/icons/phone.png",
+      text: "(+994 00) 111 22 33",
+      url: "https://wa.me/994519957262",
+    },
+    {
+      id: 2,
+      class: "footer-email",
+      img_url: "./assest/img/icons/white-mail.png",
+      text: "gunelmm10@gmail.com",
+      url: "mailto:gunelmm10@gmail.com",
+    },
+  ],
+  testimonials: [
+    {
+      id: 1,
+      avatar: "./assest/img/person.jpg",
+      full_name: "Gambar Shamsiyev",
+      comment:
+        "Working with this developer was a game-changer for our project. Their attention to detail and creativity truly set them apart. After a few weeks he impressed the entire team so much.",
+      profession: "Project Manager at YevlaxTech",
+    },
+    {
+      id: 2,
+      avatar: "./assest/img/person.jpg",
+      full_name: "Gambar Shamsiyev",
+      comment:
+        "Working with this developer was a game-changer for our project. Their attention to detail and creativity truly set them apart. After a few weeks he impressed the entire team so much.",
+      profession: "Project Manager at YevlaxTech",
+    },
+    {
+      id: 3,
+      avatar: "./assest/img/person.jpg",
+      full_name: "Gambar Shamsiyev",
+      comment:
+        "Working with this developer was a game-changer for our project. Their attention to detail and creativity truly set them apart. After a few weeks he impressed the entire team so much.",
+      profession: "Project Manager at YevlaxTech",
+    },
+    {
+      id: 4,
+      avatar: "./assest/img/person.jpg",
+      full_name: "Gambar Shamsiyev",
+      comment:
+        "Working with this developer was a game-changer for our project. Their attention to detail and creativity truly set them apart. After a few weeks he impressed the entire team so much.",
+      profession: "Project Manager at YevlaxTech",
+    },
+  ],
+  projects: [
+    {
+      id: 1,
+      project_cover_image: "/assest/img/world-telecom.jpg",
+      project_url: "https://github.com/Gunel1011/world-telecom",
+    },
+    {
+      id: 2,
+      project_cover_image: "./assest/img/clark.jpg",
+      project_url: "https://clark-two.vercel.app/",
+    },
+    {
+      id: 3,
+      project_cover_image: "./assest/img/avo.jpg",
+      project_url: "https://avo-beige.vercel.app/",
+    },
+    {
+      id: 4,
+      project_cover_image: "./assest/img/oneder.jpg",
+      project_url: "https://passport-zo4r.vercel.app/",
+    },
+    {
+      id: 5,
+      project_cover_image: "./assest/img/passport.jpg",
+      project_url: "https://passport-psi.vercel.app/",
+    },
+    {
+      id: 6,
+      project_cover_image: "./assest/img/ronaldo.jpg",
+      project_url: "https://ronald-orcin.vercel.app/",
+    },
+  ],
+};
+
+// cursor
+document.addEventListener("mousemove", (e) => {
+  const x = e.clientX;
+  const y = e.clientY;
+  cursor.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+});
 
 // header scrol
 window.addEventListener("scroll", () => {
@@ -142,6 +187,35 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// headder active scroll
+window.addEventListener("scroll", () => {
+  if (window.scrollY < 600) {
+    aboutList.classList.remove("active");
+    conctact.classList.remove("active");
+  }
+  if (window.scrollY > 600) {
+    aboutList.classList.add("active");
+    services.classList.remove("active");
+    project.classList.remove("active");
+    conctact.classList.remove("active");
+  }
+  if (window.scrollY > 1066) {
+    services.classList.add("active");
+    aboutList.classList.remove("active");
+    conctact.classList.remove("active");
+  }
+  if (window.scrollY > 1396) {
+    project.classList.add("active");
+    services.classList.remove("active");
+    conctact.classList.remove("active");
+  }
+  if (window.scrollY > 5359) {
+    conctact.classList.add("active");
+    project.classList.remove("active");
+  }
+  console.log(scrollY);
+});
+
 // contact onclick
 btn.addEventListener("click", () => {
   form.classList.add("block");
@@ -154,6 +228,10 @@ formOverley.addEventListener("click", () => {
   surnameRequat.innerHTML = "";
   emailRequat.innerHTML = "";
   textareaRequat.innerHTML = "";
+  firstName.value = "";
+  surname.value = "";
+  gamil.value = "";
+  message.value = "";
 });
 // yoxlanis
 const check = (e) => {
@@ -181,6 +259,7 @@ const check = (e) => {
     e.preventDefault();
   } else {
     surnameRequat.innerHTML = "";
+    surname.value = "";
   }
 
   // email ucun
@@ -194,102 +273,113 @@ const check = (e) => {
     e.preventDefault();
   } else {
     emailRequat.innerHTML = "";
+    gamil.value = "";
   }
-
   // mesaj yoxlanisi
   if (!message.value || message.value.length < 10) {
     textareaRequat.innerHTML = "Zəhmət olmasa messajinizi daxil edin..";
     e.preventDefault();
   } else {
     textareaRequat.innerHTML = "";
+    message.value = "";
   }
 };
 formBtn.addEventListener("click", check);
 
 // about write
 const writeHtml = () => {
-  aboutContent.innerHTML = "";
-  data.map((item) => {
-    aboutContent.innerHTML += `
-<h2 class="title-about">Who am I?</h2>
-         <p class="intro-about">${item.bio}</p>
-         <div class="dev-skills">
-            ${item.skills
-              .map((skill, index) => {
-                const colors = ["blue", "green", "red", "yellow", "purple"];
-                const colorClass = colors[index % colors.length];
-                return `<h5 class="skill ${colorClass}">${skill}</h5>`;
-              })
-              .join("")}
-         </div>
-    `;
-  });
-  img.innerHTML = "";
-  data.map((item) => {
-    img.innerHTML += `
-      <img src="${item.img}" alt="img" />
-    `;
-  });
+  aboutContent.innerHTML = `
+    <h2 class="title-about">Who am I?</h2>
+    <p class="intro-about">${userData.about}</p>
+    <div class="dev-skills">
+      ${userData.skills
+        .map((skill) => {
+          return `<h5 class="skill" style="background-color: ${skill.background_color};">${skill.skill}</h5>`;
+        })
+        .join("")}
+    </div>
+  `;
+
+  img.innerHTML = `<img src="${userData.avatar_image}" alt="avatar" />`;
 };
+
 writeHtml();
 
 // list experce write
 
-const writeHtmlExperce = () => {
-  experienceList.innerHTML = "";
-  data2.map((item) => {
-    experienceList.innerHTML += `
-   <li class="list-item-exprence">
-     <div class="iocn">
-        <img src="${item.imgExperce}" alt="calendar-icon"/>
-        </div>
-        <div class="content">
-        <p class="text">${item.experceTitle}</p>
-         <h2 class="year">${item.experceYear}</h2>
+const writeHtmlExperience = () => {
+  experienceList.innerHTML = `
+    <li class="list-item-exprence">
+      <div class="iocn">
+        <img src="./assest/img/icons/calendar.png" alt="calendar-icon"/>
+      </div>
+      <div class="content">
+        <p class="text">Experience</p>
+        <h2 class="year">${userData.experience} years</h2>
       </div>
     </li>
-    `;
-  });
+
+    <li class="list-item-exprence">
+      <div class="iocn">
+        <img src="./assest/img/icons/user.png" alt="user-icon"/>
+      </div>
+      <div class="content">
+        <p class="text">Happy Clients</p>
+        <h2 class="year">${userData.happy_clients} clients</h2>
+      </div>
+    </li>
+
+    <li class="list-item-exprence">
+      <div class="iocn">
+        <img src="./assest/img/icons/html-fiveg-html.png" alt="project-icon"/>
+      </div>
+      <div class="content">
+        <p class="text">Completed Projects</p>
+        <h2 class="year">${userData.completed_projects} projects</h2>
+      </div>
+    </li>
+  `;
 };
-writeHtmlExperce();
+
+writeHtmlExperience();
 
 // testimonil write
 const testimonialsWriteHtml = () => {
   swiperSlide.innerHTML = "";
-  testimonil.map((item) => {
+
+  userData.testimonials.forEach((item) => {
     swiperSlide.innerHTML += `
-   <div class="swiper-slide">
-    <div class="all-card">
-        <div class="icon">
-           <img src="${item.iconImg}" alt="iconImg" />
-         </div>
-        <div class="testimonil">
-           <h2 class="text">${item.text}</h2>
-         </div>
-        <div class="person">
-           <div class="person-img">
-             <img src="${item.personImg}" alt="personImg" />
+      <div class="swiper-slide">
+        <div class="all-card">
+          <div class="icon">
+            <img src="./assest/img/icons/“.png" alt="quote-icon" />
+          </div>
+          <div class="testimonil">
+            <h2 class="text">${item.comment}</h2>
+          </div>
+          <div class="person">
+            <div class="person-img">
+              <img src="${item.avatar}" alt="${item.full_name}" />
             </div>
-         <div class="person-info">
-            <h3 class="person-name">${item.personName}</h3>
-            <p class="person-work">${item.personWork}</p>
+            <div class="person-info">
+              <h3 class="person-name">${item.full_name}</h3>
+              <p class="person-work">${item.profession}</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     `;
   });
 };
 testimonialsWriteHtml();
-
 // work write Html
 const workWriteHtml = () => {
   workRe.innerHTML = "";
-  workData.map((item) => {
+  userData.projects.forEach((item) => {
     workRe.innerHTML += `
       <div class="img-work">
-         <a href="${item.link}" target="_blank" >
-           <img src="${item.workImg}" alt="work_img" />
+         <a href="${item.project_url}" target="_blank" >
+           <img src="${item.project_cover_image}" alt="work_img" />
           </a>
        </div>
   `;
@@ -301,11 +391,11 @@ workWriteHtml();
 
 const contactWriteHtml = () => {
   contactBtn.innerHTML = "";
-  contactData.map((item) => {
+  userData.social_media_links.forEach((item) => {
     contactBtn.innerHTML += `
-     <a class="${item.clasName}" href="mailto:${item.gmailAddres}"
+     <a class="${item.className}" href="${item.url}"
          target="_blank">
-       <img src="${item.gmailIcon}" alt="" />
+       <img src="${item.icon}" alt="" />
        ${item.text}
      </a>
     `;
@@ -316,53 +406,21 @@ contactWriteHtml();
 // footer write
 const footerWriteHtml = () => {
   contactFooter.innerHTML = "";
-  footerData.map((item) => {
+  userData.social_media_links_fotter.map((item) => {
     contactFooter.innerHTML += `
-    <a class="footer-email" target="_blank" href="${item.contactAdres}">
-      <img src="${item.icon}" alt="" />
-        ${item.contact}
+     <a href="${item.url}" target="_blank" class="img-icon-footer">
+         <img src="${item.icon}" alt="" />
       </a>
     `;
   });
+  contactFooters.innerHTML = "";
+  userData.contact_footer.map((item) => {
+    contactFooters.innerHTML += `
+      <a class="${item.class}" href="${item.url}" target="_blank">
+        <img src="${item.img_url}" alt="" />
+            ${item.text}
+       </a>
+      `;
+  });
 };
 footerWriteHtml();
-
-const userData = {
-  about: "",
-  avatar_image: "",
-  experience: 2025,
-  happy_clients: 50,
-  completed_projects: 8,
-  email: "",
-  phone_number: "",
-  skills: [
-    {
-      id: 1,
-      skill: "HTML",
-      background_color: "#0000ff",
-    },
-  ],
-  social_media_links: [
-    {
-      id: 1,
-      url: "",
-      icon: "",
-    },
-  ],
-  testimonials: [
-    {
-      id: 1,
-      avatar: "",
-      full_name: "",
-      comment: "",
-      profession: "",
-    },
-  ],
-  projects: [
-    {
-      id: 1,
-      project_cover_image: "",
-      project_url: "",
-    },
-  ],
-};

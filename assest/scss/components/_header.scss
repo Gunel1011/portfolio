@@ -41,6 +41,7 @@
               font-size: 18px;
               font-weight: 400;
               color: $pureWhite;
+
               position: relative;
               &::after {
                 content: "";
@@ -54,6 +55,11 @@
               }
               &:hover::after {
                 width: 100%;
+              }
+            }
+            &.active {
+              a {
+                color: red;
               }
             }
           }
