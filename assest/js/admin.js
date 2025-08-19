@@ -15,9 +15,7 @@ const errorTextImg = document.querySelector(".error-text-img");
 const cursor = document.querySelector(".cursor");
 
 document.addEventListener("mousemove", (e) => {
-  const x = e.clientX;
-  const y = e.clientY;
-  cursor.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+  cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
 });
 
 const projects = [
