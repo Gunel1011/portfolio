@@ -17,9 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
       console.error("Xəta baş verdi:", error);
     }
   }
-
   local("en");
-
   select.addEventListener("change", (e) => {
     local(e.target.value);
   });
