@@ -17,29 +17,36 @@
   </head>
   <body>
     <!-- header  -->
-     <div class="cursor"></div>
+    <div class="cursor"></div>
     <header class="header">
       <div class="container">
         <div class="row">
           <div class="logo">
-            <a href="index.html">Gunel Mammadova</a>
+            <a href="index.html" data-language="name">Gunel Mammadova</a>
           </div>
           <nav class="navbar">
             <ul class="list">
               <li class="list-item services">
-                <a href="#services">Services</a>
+                <a href="#services" data-language="services">Services</a>
               </li>
               <li class="list-item project">
-                <a href="#project">Projects</a>
+                <a href="#project" data-language="Projects">Projects</a>
               </li>
               <li class="list-item about-list">
-                <a href="#about">About me</a>
+                <a href="#about" data-language="About-me">About me</a>
               </li>
               <li class="list-item conctact">
-                <a href="#contact">Contact</a>
+                <a href="#contact" data-language="concatc">Contact</a>
               </li>
             </ul>
           </nav>
+        </div>
+        <div class="language">
+          <select>
+            <option>EN</option>
+            <option>AZ</option>
+            <option>RU</option>
+          </select>
         </div>
       </div>
     </header>
@@ -56,23 +63,27 @@
           <div class="row">
             <div class="hero-content">
               <div class="hero-title">
-                <h1 class="title">Frontend</h1>
+                <h1 class="title" data-language="fronted">Frontend</h1>
               </div>
               <div class="intro">
-                <h2 class="name-intro">Hello, I am Gunel Mammadova,</h2>
-                <h3 class="intro-role">Developer</h3>
+                <h2 class="name-intro" data-language="name-intro">
+                  Hello, I am Gunel Mammadova,
+                </h2>
+                <h3 class="intro-role" data-language="developer">Developer</h3>
               </div>
             </div>
             <div class="btn">
-              <a class="touch" href="#">Get in touch</a>
+              <a class="touch" href="#" data-language="touch">Get in touch</a>
             </div>
             <!-- form  -->
             <form class="form">
               <div class="glass-card">
-                <h2 class="form-send">Send a Message</h2>
+                <h2 class="form-send" data-language="form-send">
+                  Send a Message
+                </h2>
 
                 <!-- first-name -->
-                <label for="first-name">Name</label>
+                <label for="first-name" data-language="first-name">Name</label>
                 <input
                   placeholder="Gunel"
                   type="text"
@@ -82,7 +93,7 @@
                 <p class="first-name-requat"></p>
 
                 <!-- surname  -->
-                <label for="surname">Surname</label>
+                <label for="surname" data-language="surname">Surname</label>
                 <input
                   placeholder="Mammadova"
                   type="text"
@@ -92,7 +103,7 @@
                 <p class="surname-requat"></p>
 
                 <!-- email  -->
-                <label for="gamil">Email</label>
+                <label for="gamil" data-language="gamil">Email</label>
                 <input
                   placeholder="yourEamil@gmail.com"
                   type="email"
@@ -102,7 +113,7 @@
                 <p class="email-requat"></p>
 
                 <!-- message  -->
-                <label for="message">Message</label>
+                <label for="message" data-language="message">Message</label>
                 <textarea
                   placeholder="Write message"
                   name="message"
@@ -111,7 +122,7 @@
                 <p class="textarea-requat"></p>
 
                 <!-- button  -->
-                <button id="form-btn">Send</button>
+                <button id="form-btn" data-language="Send">Send</button>
               </div>
             </form>
           </div>
@@ -146,7 +157,7 @@
       <section class="works" id="project">
         <div class="container">
           <div class="row">
-            <h2 class="work-title">Latest works</h2>
+            <h2 class="work-title" data-language="works">Latest works</h2>
             <div class="work-re"></div>
           </div>
         </div>
@@ -155,7 +166,7 @@
       <section class="contact" id="contact">
         <div class="container">
           <div class="row">
-            <h2 class="contact-title">
+            <h2 class="contact-title" data-language="work">
               Do you have a project? Let’s make it real together
             </h2>
             <div class="contact-btn"></div>
@@ -174,6 +185,7 @@
       </div>
     </footer>
 
+    <script src="./assest/js/languace.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->
@@ -195,6 +207,7 @@
         },
       });
     </script>
+    <script src="./assest/js/languace.js"></script>
     <script src="./assest/js/index.js"></script>
   </body>
 </html>

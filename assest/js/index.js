@@ -286,8 +286,8 @@ formBtn.addEventListener("click", check);
 // about write
 const writeHtml = () => {
   aboutContent.innerHTML = `
-    <h2 class="title-about">Who am I?</h2>
-    <p class="intro-about">${userData.about}</p>
+    <h2 class="title-about" data-language="me">Who am I?</h2>
+    <p class="intro-about" data-language="bio" >${userData.about}</p>
     <div class="dev-skills">
       ${userData.skills
         .map((skill) => {
@@ -328,8 +328,8 @@ const writeHtmlExperience = () => {
         <img src="./assest/img/icons/calendar.png" alt="calendar-icon"/>
       </div>
       <div class="content">
-        <p class="text">Experience</p>
-        <h2 class="year">${userData.experience} years</h2>
+        <p class="text" data-language="experence">Experience</p>
+        <h2 class="year" data-language="year">${userData.experience} years</h2>
       </div>
     </li>
 
@@ -338,8 +338,10 @@ const writeHtmlExperience = () => {
         <img src="./assest/img/icons/user.png" alt="user-icon"/>
       </div>
       <div class="content">
-        <p class="text">Happy Clients</p>
-        <h2 class="year">${userData.happy_clients} clients</h2>
+        <p class="text" data-language="happyClients">Happy Clients</p>
+        <h2 class="year" data-language="clients">${
+          userData.happy_clients
+        } clients</h2>
       </div>
     </li>
 
@@ -348,8 +350,10 @@ const writeHtmlExperience = () => {
         <img src="./assest/img/icons/html-fiveg-html.png" alt="project-icon"/>
       </div>
       <div class="content">
-        <p class="text">Completed Projects</p>
-        <h2 class="year">${userData.projects.length + 1} projects</h2>
+        <p class="text" data-language="completedProjects">Completed Projects</p>
+        <h2 class="year" data-language="project">${
+          userData.projects.length + 1
+        } projects</h2>
       </div>
     </li>
   `;
@@ -368,7 +372,7 @@ const testimonialsWriteHtml = () => {
             <img src="./assest/img/icons/“.png" alt="quote-icon" />
           </div>
           <div class="testimonil">
-            <h2 class="text">${item.comment}</h2>
+            <h2 class="text" data-language="testimonil">${item.comment}</h2>
           </div>
           <div class="person">
             <div class="person-img">

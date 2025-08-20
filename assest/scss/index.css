@@ -115,6 +115,11 @@ body {
 .header .container .row .navbar .list .list-item.active a {
   color: red;
 }
+.header .container .language {
+  color: #fff;
+  display: flex;
+  justify-content: flex-end;
+}
 
 .footer {
   margin: 64px 0;

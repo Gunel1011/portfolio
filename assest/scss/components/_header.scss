@@ -66,5 +66,10 @@
         }
       }
     }
+    .language {
+      color: $pureWhite;
+      display: flex;
+      justify-content: flex-end;
+    }
   }
 }

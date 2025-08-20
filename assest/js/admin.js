@@ -74,16 +74,16 @@ let project_clone = JSON.parse(JSON.stringify(projects));
 
 let currentEditingId = null;
 
-// const saveAdmin = () => {
-//   localStorage.setItem("admin", JSON.stringify(project_clone));
-// };
-// const checkSavedAdmin = () => {
-//   const saved = JSON.parse(localStorage.getItem("admin"));
-//   if (saved) {
-//     project_clone = saved;
-//   }
-// };
-// checkSavedAdmin();
+const saveAdmin = () => {
+  localStorage.setItem("admin", JSON.stringify(project_clone));
+};
+const checkSavedAdmin = () => {
+  const saved = JSON.parse(localStorage.getItem("admin"));
+  if (saved) {
+    project_clone = saved;
+  }
+};
+checkSavedAdmin();
 
 const openModal = (id) => {
   modal.classList.add("active");
@@ -194,6 +194,7 @@ const deleteProject = (id) => {
     return;
   }
   writeAdminCard();
+  saveAdmin();
 };
 
 // write admin
