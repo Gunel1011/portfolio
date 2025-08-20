@@ -24,22 +24,23 @@ const project = document.querySelector(".project");
 const services = document.querySelector(".services");
 const conctact = document.querySelector(".conctact");
 const cursor = document.querySelector(".cursor");
-
+const skill = document.querySelector(".skill");
+const introAbout = document.querySelector(".intro-about");
+const nowData = new Date();
 const userData = {
   about:
     "I am an aspiring Frontend developer passionate about understanding how computers work and solving coding challenges. I am result-oriented and persistent, never stopping until a problem is fully resolved. In my free time, I enjoy handmade art and drawing. My main goal is to keep moving forward, continuously learning, and achieving success in both personal and professional life.",
   avatar_image: "./assest/img/g2.png",
-  experience: 1,
+  experience: nowData.getFullYear() - 2024,
   happy_clients: 50,
-  completed_projects: 7,
   email: "gunelmm10@gmail.com",
   phone_number: "(+994 51) 995 72 62",
   skills: [
-    { id: 1, skill: "HTML", background_color: "#e34c26" },
-    { id: 2, skill: "CSS", background_color: "#264de4" },
-    { id: 3, skill: "JavaScript", background_color: "#f0db4f" },
-    { id: 4, skill: "React", background_color: "#61dbfb" },
-    { id: 5, skill: "Sass", background_color: "#cc6699" },
+    { id: 1, skill: "HTML", background_color: "#E94141" },
+    { id: 2, skill: "CSS", background_color: "#4198E9" },
+    { id: 3, skill: "JavaScript", background_color: "#E9C441" },
+    { id: 4, skill: "React", background_color: "#41E98E" },
+    { id: 5, skill: "Sass", background_color: "#9F41E9" },
   ],
   social_media_links: [
     {
@@ -213,7 +214,6 @@ window.addEventListener("scroll", () => {
     conctact.classList.add("active");
     project.classList.remove("active");
   }
-  console.log(scrollY);
 });
 
 // contact onclick
@@ -294,19 +294,36 @@ const writeHtml = () => {
     <div class="dev-skills">
       ${userData.skills
         .map((skill) => {
-          return `<h5 class="skill" style="background-color: ${skill.background_color};">${skill.skill}</h5>`;
+          return `<h5 class="skill" 
+              style="background-color: ${skill.background_color};" 
+              data-color="${skill.background_color}">
+              ${skill.skill}
+          </h5>`;
         })
         .join("")}
     </div>
   `;
 
-  img.innerHTML = `<img src="${userData.avatar_image}" alt="avatar" />`;
-};
+  img.innerHTML = `<img src="${userData.avatar_image}" class="avatarImg" alt="avatar" />`;
 
+  const avatarImg = document.querySelector(".avatarImg");
+  const skills = document.querySelectorAll(".skill");
+
+  skills.forEach((el) => {
+    const color = el.getAttribute("data-color");
+
+    el.addEventListener("mouseenter", () => {
+      avatarImg.style.filter = `drop-shadow(0 -10px 80px ${color})`;
+    });
+
+    el.addEventListener("mouseleave", () => {
+      avatarImg.style.filter = "none";
+    });
+  });
+};
 writeHtml();
 
 // list experce write
-
 const writeHtmlExperience = () => {
   experienceList.innerHTML = `
     <li class="list-item-exprence">
@@ -335,7 +352,7 @@ const writeHtmlExperience = () => {
       </div>
       <div class="content">
         <p class="text">Completed Projects</p>
-        <h2 class="year">${userData.completed_projects} projects</h2>
+        <h2 class="year">${userData.projects.length + 1} projects</h2>
       </div>
     </li>
   `;
@@ -346,7 +363,6 @@ writeHtmlExperience();
 // testimonil write
 const testimonialsWriteHtml = () => {
   swiperSlide.innerHTML = "";
-
   userData.testimonials.forEach((item) => {
     swiperSlide.innerHTML += `
       <div class="swiper-slide">
@@ -359,7 +375,7 @@ const testimonialsWriteHtml = () => {
           </div>
           <div class="person">
             <div class="person-img">
-              <img src="${item.avatar}" alt="${item.full_name}" />
+              <img src="${item.avatar}"  alt="${item.full_name}" />
             </div>
             <div class="person-info">
               <h3 class="person-name">${item.full_name}</h3>
