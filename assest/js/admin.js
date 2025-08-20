@@ -74,6 +74,17 @@ let project_clone = JSON.parse(JSON.stringify(projects));
 
 let currentEditingId = null;
 
+// const saveAdmin = () => {
+//   localStorage.setItem("admin", JSON.stringify(project_clone));
+// };
+// const checkSavedAdmin = () => {
+//   const saved = JSON.parse(localStorage.getItem("admin"));
+//   if (saved) {
+//     project_clone = saved;
+//   }
+// };
+// checkSavedAdmin();
+
 const openModal = (id) => {
   modal.classList.add("active");
   const isEditing = typeof id === "number" && !Number.isNaN(id);
@@ -129,13 +140,13 @@ btn.addEventListener("click", (e) => {
   }
   if (hasError) return;
 
-  // Duplicate title check: ignore current item if editing
-  const isDuplicate = project_clone.some((p) => {
-    if (!p.title) return false;
-    const sameTitle = p.title.trim().toLowerCase() === nameValue.toLowerCase();
+  const isDuplicate = project_clone.some((item) => {
+    if (!item.title) return false;
+    const sameTitle =
+      item.title.trim().toLowerCase() === nameValue.toLowerCase();
     if (!sameTitle) return false;
     if (currentEditingId == null) return true;
-    return p.id !== currentEditingId;
+    return item.id !== currentEditingId;
   });
   if (isDuplicate) {
     if (errorTextName)
@@ -143,9 +154,10 @@ btn.addEventListener("click", (e) => {
     return;
   }
 
-  // Edit existing project
   if (currentEditingId != null) {
-    const index = project_clone.findIndex((p) => p.id === currentEditingId);
+    const index = project_clone.findIndex(
+      (item) => item.id === currentEditingId
+    );
     if (index !== -1) {
       project_clone[index].title = nameValue;
       project_clone[index].data = dataValue;
@@ -159,7 +171,6 @@ btn.addEventListener("click", (e) => {
     return;
   }
 
-  // Add new project (image optional)
   const imageUrl = file ? URL.createObjectURL(file) : "";
   project_clone.push({
     id: id++,
@@ -170,19 +181,25 @@ btn.addEventListener("click", (e) => {
   });
   writeAdminCard();
   closeModal();
+  saveAdmin();
 });
 
 // delete
 const deleteProject = (id) => {
   const udapted = project_clone.filter((item) => item.id !== id);
-  project_clone = udapted;
+  silinsinmi = confirm("Silinsinmi?");
+  if (silinsinmi) {
+    project_clone = udapted;
+  } else {
+    return;
+  }
   writeAdminCard();
 };
 
 // write admin
 const writeAdminCard = () => {
   allCard.innerHTML = "";
-  project_clone.map((item) => {
+  project_clone.forEach((item) => {
     allCard.innerHTML += `
    <div class="card" id=${item.id}>
       <div class="card-admin-img" style="background-image: url(${item.url})">

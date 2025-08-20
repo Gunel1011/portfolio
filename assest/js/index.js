@@ -68,14 +68,14 @@ const userData = {
     },
     {
       id: 2,
-      url: "https://www.facebook.com/GünelMəmmədova/",
+      url: "https://www.facebook.com/gunel.m.mm.dova.642904/",
       icon: "./assest/img/icons/facebook.png",
       className: "facebook",
       text: "Facebook",
     },
     {
       id: 3,
-      url: "https://www.linkedin.com/gunel-mammadova10/",
+      url: "https://www.linkedin.com/in/gunel-mammadova10/",
       icon: "./assest/img/icons/linkedin.png",
       className: "linkedin",
       text: "LinkedIn",
@@ -259,7 +259,6 @@ const check = (e) => {
     e.preventDefault();
   } else {
     surnameRequat.innerHTML = "";
-    surname.value = "";
   }
 
   // email ucun
@@ -273,7 +272,6 @@ const check = (e) => {
     e.preventDefault();
   } else {
     emailRequat.innerHTML = "";
-    gamil.value = "";
   }
   // mesaj yoxlanisi
   if (!message.value || message.value.length < 10) {
@@ -281,7 +279,6 @@ const check = (e) => {
     e.preventDefault();
   } else {
     textareaRequat.innerHTML = "";
-    message.value = "";
   }
 };
 formBtn.addEventListener("click", check);

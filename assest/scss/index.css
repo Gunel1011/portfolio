@@ -406,9 +406,6 @@ body {
      object-fit: cover;
   border-radius: 32px;
 }
-.about .container .row .about-me .img img:hover {
-  filter: drop-shadow(0 -10px 80px rgb(218, 30, 30));
-}
 .about .container .row .all-expernce {
   display: flex;
 }
