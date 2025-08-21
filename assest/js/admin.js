@@ -89,24 +89,6 @@ const checkSavedAdmin = () => {
 };
 checkSavedAdmin();
 
-const openModal = (id) => {
-  modal.classList.add("active");
-  const isEditing = typeof id === "number" && !Number.isNaN(id);
-  if (isEditing) {
-    currentEditingId = id;
-    const project = project_clone.find((item) => item.id === id);
-    if (project) {
-      projectName.value = project.title || "";
-      projectData.value = project.data || "";
-    }
-  } else {
-    currentEditingId = null;
-    projectName.value = "";
-    projectData.value = "";
-    if (projectImg) projectImg.value = "";
-  }
-};
-
 const closeModal = () => {
   modal.classList.remove("active");
   projectName.value = "";
@@ -121,68 +103,100 @@ if (moadalOverley) moadalOverley.addEventListener("click", closeModal);
 if (btnNew) btnNew.addEventListener("click", () => openModal());
 let id = 100;
 
-// addProject
-btn.addEventListener("click", (e) => {
-  e.preventDefault();
-  const nameValue = projectName.value.trim();
-  const dataValue = projectData.value.trim();
-  const file = projectImg && projectImg.files ? projectImg.files[0] : null;
+// open modal
+function openModal(id) {
+  modal.classList.add("active");
 
-  if (errorTextName) errorTextName.textContent = "";
-  if (errorTextData) errorTextData.textContent = "";
-  if (errorTextImg) errorTextImg.textContent = "";
+  currentEditingId = id;
 
-  let hasError = false;
-  if (!nameValue) {
-    if (errorTextName)
-      errorTextName.textContent = "Zəhmət olmasa ad daxil edin";
-    hasError = true;
-  }
-  if (!dataValue) {
-    if (errorTextData) errorTextData.textContent = "Zəhmət olmasa tarix seçin";
-    hasError = true;
-  }
-  if (hasError) return;
+  const project = project_clone.find((item) => item.id === id);
+  if (project) {
+    projectName.value = project.title || "";
+    projectData.value = project.data || "";
 
-  const isDuplicate = project_clone.some((item) => {
-    if (!item.title) return false;
-    const sameTitle =
-      item.title.trim().toLowerCase() === nameValue.toLowerCase();
-    if (!sameTitle) return false;
-    if (currentEditingId == null) return true;
-    return item.id !== currentEditingId;
-  });
-  if (isDuplicate) {
-    if (errorTextName)
-      errorTextName.textContent = "Bu adla layihə artıq mövcuddur";
-    return;
-  }
-
-  if (currentEditingId != null) {
-    const index = project_clone.findIndex(
-      (item) => item.id === currentEditingId
-    );
-    if (index !== -1) {
-      project_clone[index].title = nameValue;
-      project_clone[index].data = dataValue;
-      if (file) {
-        const imageUrl = URL.createObjectURL(file);
-        project_clone[index].url = imageUrl;
-      }
+    if (projectImg) {
+      projectImg.value = "";
+      projectImg.disabled = true;
     }
-    writeAdminCard();
-    closeModal();
-    return;
   }
+}
 
-  const imageUrl = file ? URL.createObjectURL(file) : "";
+// add project
+function addProject(nameValue, dataValue, file) {
   project_clone.push({
     id: id++,
-    url: imageUrl,
+    url: file ? URL.createObjectURL(file) : "",
     title: nameValue,
     data: dataValue,
     featured: false,
   });
+}
+
+btnNew.addEventListener("click", () => {
+  modal.classList.add("active");
+  currentEditingId = null;
+  projectName.value = "";
+  projectData.value = "";
+
+  if (projectImg) {
+    projectImg.value = "";
+    projectImg.disabled = false;
+  }
+});
+
+// edidt
+function updateProject(id, nameValue, dataValue, file) {
+  const project = project_clone.find((item) => item.id === id);
+  if (project) {
+    project.title = nameValue;
+    project.data = dataValue;
+    if (file) project.url = URL.createObjectURL(file);
+  }
+}
+
+// 4. Validasiya
+function validateForm(nameValue, dataValue) {
+  errorTextName.textContent = "";
+  errorTextData.textContent = "";
+
+  if (!nameValue) {
+    errorTextName.textContent = "Zəhmət olmasa ad daxil edin";
+    return false;
+  }
+  if (!dataValue) {
+    errorTextData.textContent = "Zəhmət olmasa tarix seçin";
+    return false;
+  }
+
+  const isDuplicate = project_clone.some(
+    (item) =>
+      item.title?.trim().toLowerCase() === nameValue.toLowerCase() &&
+      item.id !== currentEditingId
+  );
+  if (isDuplicate) {
+    errorTextName.textContent = "Bu adla layihə artıq mövcuddur";
+    return false;
+  }
+
+  return true;
+}
+
+// 5. Button klik eventi
+btn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const nameValue = projectName.value.trim();
+  const dataValue = projectData.value.trim();
+  const file = projectImg?.files?.[0] || null;
+
+  if (!validateForm(nameValue, dataValue)) return;
+
+  if (currentEditingId != null) {
+    updateProject(currentEditingId, nameValue, dataValue, file);
+  } else {
+    addProject(nameValue, dataValue, file);
+  }
+
   writeAdminCard();
   closeModal();
   saveAdmin();

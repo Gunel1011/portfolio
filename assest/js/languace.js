@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", () => {
-  const select = document.querySelector(".language");
+  const select = document.querySelector(".language select");
 
   async function local(language) {
     try {
@@ -8,17 +8,22 @@ window.addEventListener("DOMContentLoaded", () => {
       const data = await response.json();
 
       Object.keys(data).forEach((key) => {
-        const element = document.querySelector(`[data-language="${key}"]`);
-        if (element) {
-          element.textContent = data[key];
-        }
+        const elements = document.querySelectorAll(
+          `[data-language="${key}"]`
+        );
+        elements.forEach((el) => {
+          el.textContent = data[key];
+        });
       });
     } catch (error) {
       console.error("Xəta baş verdi:", error);
     }
   }
   local("en");
-  select.addEventListener("change", (e) => {
-    local(e.target.value);
-  });
+  if (select) {
+    select.addEventListener("change", (e) => {
+      const value = String(e.target.value || "en").toLowerCase();
+      local(value);
+    });
+  }
 });
