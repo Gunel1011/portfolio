@@ -518,7 +518,16 @@ body {
   font-weight: 400;
   color: #fff;
 }
-.about .container .row .all-expernce .experince .experience-list .list-item-exprence .content .year {
+.about .container .row .all-expernce .experince .experience-list .list-item-exprence .content .all-year {
+  display: flex;
+  gap: 10px;
+}
+.about .container .row .all-expernce .experince .experience-list .list-item-exprence .content .all-year .year {
+  font-size: 48px;
+  font-weight: 600;
+  color: #fff;
+}
+.about .container .row .all-expernce .experince .experience-list .list-item-exprence .content .all-year .year-text {
   font-size: 48px;
   font-weight: 600;
   color: #fff;

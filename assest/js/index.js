@@ -343,7 +343,10 @@ const writeHtmlExperience = () => {
       </div>
       <div class="content">
         <p class="text" data-language="experence">Experience</p>
-        <h2 class="year">${userData.experience} years</h2>
+        <div class="all-year">
+         <h2 class="year" >${userData.experience} </h2>
+        <span class="year-text" data-language="year">years</span>
+        </div>
       </div>
     </li>
 
@@ -353,7 +356,10 @@ const writeHtmlExperience = () => {
       </div>
       <div class="content">
         <p class="text" data-language="happyClients">Happy Clients</p>
-        <h2 class="year">${userData.happy_clients} clients</h2>
+        <div class="all-year">
+        <h2 class="year">${userData.happy_clients} </h2>
+        <span class="year-text" data-language="clients">clients</span>
+        </div>
       </div>
     </li>
 
@@ -363,7 +369,10 @@ const writeHtmlExperience = () => {
       </div>
       <div class="content">
         <p class="text" data-language="completedProjects">Completed Projects</p>
-        <h2 class="year">${userData.projects.length + 1} projects </h2>
+        <div class="all-year">
+         <h2 class="year">${userData.projects.length + 1}</h2>
+        <span class="year-text" data-language="Projects" >projects</span>
+        </div>
       </div>
     </li>
   `;
@@ -422,7 +431,7 @@ const contactWriteHtml = () => {
     contactBtn.innerHTML += `
      <a class="${item.className}" href="${item.url}"
          target="_blank">
-       <img src="${item.icon}" alt="" />
+       <img src="${item.icon}" alt="contact_img" />
        ${item.text}
      </a>
     `;
@@ -436,7 +445,7 @@ const footerWriteHtml = () => {
   userData.social_media_links_fotter.map((item) => {
     contactFooter.innerHTML += `
      <a href="${item.url}" target="_blank" class="img-icon-footer">
-         <img src="${item.icon}" alt="" />
+         <img src="${item.icon}" alt="img" />
       </a>
     `;
   });
@@ -444,7 +453,7 @@ const footerWriteHtml = () => {
   userData.contact_footer.map((item) => {
     contactFooters.innerHTML += `
       <a class="${item.class}" href="${item.url}" target="_blank">
-        <img src="${item.img_url}" alt="" />
+        <img src="${item.img_url}" alt="img_sosial" />
             ${item.text}
        </a>
       `;

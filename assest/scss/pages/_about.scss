@@ -95,10 +95,19 @@
                   font-weight: 400;
                   color: $pureWhite;
                 }
-                .year {
-                  font-size: 48px;
-                  font-weight: 600;
-                  color: $pureWhite;
+                .all-year {
+                  display: flex;
+                  gap: 10px;
+                  .year {
+                    font-size: 48px;
+                    font-weight: 600;
+                    color: $pureWhite;
+                  }
+                  .year-text {
+                    font-size: 48px;
+                    font-weight: 600;
+                    color: $pureWhite;
+                  }
                 }
               }
             }
