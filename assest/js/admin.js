@@ -13,6 +13,11 @@ const errorTextData = document.querySelector(".error-text-data");
 const errorTextName = document.querySelector(".error-text-name");
 const errorTextImg = document.querySelector(".error-text-img");
 const cursor = document.querySelector(".cursor");
+const username = document.querySelector("#usernameid");
+const password = document.querySelector("#passwordid");
+const singBtn = document.querySelector(".sing-btn");
+const sing = document.querySelector(".sing");
+const paswordText = document.querySelector(".paswordText");
 
 document.addEventListener("mousemove", (e) => {
   cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
@@ -69,6 +74,10 @@ const projects = [
     featured: false,
   },
 ];
+const paswordData = {
+  username: "gun",
+  password: "1234",
+};
 
 let project_clone = JSON.parse(JSON.stringify(projects));
 
@@ -219,3 +228,17 @@ const writeAdminCard = () => {
   });
 };
 writeAdminCard();
+singBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  const userVal = username.value;
+  const passwordVal = password.value;
+  if (
+    userVal === paswordData.username &&
+    passwordVal === paswordData.password
+  ) {
+    window.location.href = "http://127.0.0.1:5500/admin.html";
+    paswordText.innerHTML = "";
+  } else {
+    paswordText.innerHTML = "Password or username is incorrect.";
+  }
+});

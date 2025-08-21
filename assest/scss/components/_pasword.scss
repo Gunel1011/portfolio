@@ -1,0 +1,38 @@
+@use "../variables" as *;
+.sing {
+    background-color: black;
+  .container {
+    .row {
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      .form {
+        width: 30%;
+        padding: 20px;
+        border-radius: 20px;
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        label {
+          color: $pureWhite;
+          margin: 10px 0;
+          font-size: 20px;
+        }
+        input {
+          border-radius: 20px;
+          padding: 5px 10px;
+        }
+        .paswordText {
+          color: red;
+          margin-top: 5px;
+        }
+        .sing-btn {
+          border: none;
+          margin-top: 30px;
+          padding: 10px 0;
+          border-radius: 20px;
+        }
+      }
+    }
+  }
+}
