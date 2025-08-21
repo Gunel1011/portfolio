@@ -198,6 +198,16 @@ body {
   letter-spacing: 2px;
   animation-duration: 2s;
 }
+.loding .container .row .me-name {
+  position: absolute;
+  bottom: 10px;
+}
+.loding .container .row .me-name .name {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
 
 .sing {
   background-color: black;
