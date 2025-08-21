@@ -27,6 +27,8 @@ const cursor = document.querySelector(".cursor");
 const skill = document.querySelector(".skill");
 const introAbout = document.querySelector(".intro-about");
 const nowData = new Date();
+const loding = document.querySelector(".loding");
+
 const userData = {
   about:
     "I am an aspiring Frontend developer passionate about understanding how computers work and solving coding challenges. I am result-oriented and persistent, never stopping until a problem is fully resolved. In my free time, I enjoy handmade art and drawing. My main goal is to keep moving forward, continuously learning, and achieving success in both personal and professional life.",
@@ -164,6 +166,18 @@ const userData = {
     },
   ],
 };
+
+// loding
+document.addEventListener("DOMContentLoaded", () => {
+  if (!sessionStorage.getItem("seenLoading")) {
+    setTimeout(() => {
+      loding.classList.add("deactive");
+      sessionStorage.setItem("seenLoading", "true");
+    }, 5000);
+  } else {
+    loding.classList.add("deactive");
+  }
+});
 
 // cursor
 document.addEventListener("mousemove", (e) => {

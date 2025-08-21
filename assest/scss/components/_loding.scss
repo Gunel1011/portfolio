@@ -1,0 +1,34 @@
+@use "../variables" as *;
+.loding {
+  position: absolute;
+  z-index: 99999999;
+  width: 100%;
+  height: 100vh;
+  background-color: $pureblack;
+  &.deactive {
+    display: none;
+  }
+  .container {
+    .row {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      .loding-text {
+        color: $pureWhite;
+        font-size: 40px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        animation-duration: 2s;
+      }
+      .loding-portfolio {
+        color: $pureWhite;
+        font-size: 25px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        animation-duration: 2s;
+      }
+    }
+  }
+}

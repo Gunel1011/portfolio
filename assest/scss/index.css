@@ -167,6 +167,38 @@ body {
   height: 16px;
 }
 
+.loding {
+  position: absolute;
+  z-index: 99999999;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+}
+.loding.deactive {
+  display: none;
+}
+.loding .container .row {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.loding .container .row .loding-text {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  animation-duration: 2s;
+}
+.loding .container .row .loding-portfolio {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  animation-duration: 2s;
+}
+
 .hero {
   width: 100%;
   position: relative;
