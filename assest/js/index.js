@@ -343,7 +343,7 @@ const writeHtmlExperience = () => {
       </div>
       <div class="content">
         <p class="text" data-language="experence">Experience</p>
-        <h2 class="year" data-language="year">${userData.experience} years</h2>
+        <h2 class="year">${userData.experience} years</h2>
       </div>
     </li>
 
@@ -353,9 +353,7 @@ const writeHtmlExperience = () => {
       </div>
       <div class="content">
         <p class="text" data-language="happyClients">Happy Clients</p>
-        <h2 class="year" data-language="clients">${
-          userData.happy_clients
-        } clients</h2>
+        <h2 class="year">${userData.happy_clients} clients</h2>
       </div>
     </li>
 
@@ -365,9 +363,7 @@ const writeHtmlExperience = () => {
       </div>
       <div class="content">
         <p class="text" data-language="completedProjects">Completed Projects</p>
-        <h2 class="year" data-language="project">${
-          userData.projects.length + 1
-        } projects</h2>
+        <h2 class="year">${userData.projects.length + 1} projects </h2>
       </div>
     </li>
   `;
@@ -378,7 +374,7 @@ writeHtmlExperience();
 // testimonil write
 const testimonialsWriteHtml = () => {
   swiperSlide.innerHTML = "";
-  userData.testimonials.forEach((item) => {
+  userData.testimonials.map((item) => {
     swiperSlide.innerHTML += `
       <div class="swiper-slide">
         <div class="all-card">

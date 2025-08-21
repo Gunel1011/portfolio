@@ -32,7 +32,7 @@ body {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: linear-gradient(#5a5b5e, #38383a);
+  background: linear-gradient(#fbfcfd, #9d9da4);
   pointer-events: none;
   z-index: 99999999;
   transition: transform 0.05s linear;
