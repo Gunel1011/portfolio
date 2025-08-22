@@ -116,7 +116,7 @@ function openModal(id) {
 
     if (projectImg) {
       projectImg.value = "";
-      projectImg.disabled = true;
+      projectImg.disabled = false;
     }
   }
 }
@@ -152,6 +152,7 @@ function updateProject(id, nameValue, dataValue, file) {
     project.data = dataValue;
     if (file) project.url = URL.createObjectURL(file);
   }
+
 }
 
 // 4. Validasiya
