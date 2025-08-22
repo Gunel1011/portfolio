@@ -181,7 +181,7 @@ function validateForm(nameValue, dataValue) {
   return true;
 }
 
-// 5. Button klik eventi
+// Button click 
 btn.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -196,7 +196,7 @@ btn.addEventListener("click", (e) => {
   } else {
     addProject(nameValue, dataValue, file);
   }
-
+  
   writeAdminCard();
   closeModal();
   saveAdmin();
