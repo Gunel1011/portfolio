@@ -166,7 +166,7 @@ const userData = {
     },
   ],
 };
-
+formData = [];
 // loding
 document.addEventListener("DOMContentLoaded", () => {
   if (!sessionStorage.getItem("seenLoading")) {
@@ -293,6 +293,18 @@ const check = (e) => {
     e.preventDefault();
   } else {
     textareaRequat.innerHTML = "";
+  }
+  let id = 1000;
+  if (firstName.value && surname.value && gamil.value && message.value) {
+    e.preventDefault();
+    formData.push({
+      id: id++,
+      name: firstName.value,
+      surname: surname.value,
+      gmail: gamil.value,
+      message: message.value,
+    });
+    console.log(formData);
   }
 };
 formBtn.addEventListener("click", check);
