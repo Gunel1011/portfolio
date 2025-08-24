@@ -28,6 +28,8 @@ const skill = document.querySelector(".skill");
 const introAbout = document.querySelector(".intro-about");
 const nowData = new Date();
 const loding = document.querySelector(".loding");
+const menu = document.querySelector(".menu");
+const navbar = document.querySelector(".navbar");
 
 const userData = {
   about:
@@ -179,6 +181,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// burger menu
+menu.addEventListener("click", () => {
+  navbar.classList.toggle("activeMenu");
+});
 // cursor
 document.addEventListener("mousemove", (e) => {
   const x = e.clientX;

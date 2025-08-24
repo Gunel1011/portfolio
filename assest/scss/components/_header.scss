@@ -1,5 +1,4 @@
 @use "../variables" as *;
-
 .header {
   width: 100%;
   position: absolute;
@@ -23,12 +22,17 @@
     .row {
       justify-content: space-between;
       align-items: center;
-      .logo {
-        a {
-          color: $pureWhite;
-          font-family: "Figtree", sans-serif;
-          font-size: 32px;
-          font-weight: 600;
+      .logo-menu {
+        .menu {
+          display: none;
+        }
+        .logo {
+          a {
+            color: $pureWhite;
+            font-family: "Figtree", sans-serif;
+            font-size: 32px;
+            font-weight: 600;
+          }
         }
       }
       .navbar {
@@ -70,6 +74,67 @@
       color: $pureWhite;
       display: flex;
       justify-content: flex-end;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    .container {
+      width: 100%;
+      .row {
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        position: relative;
+        .logo-menu {
+          padding: 0 10px;
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          align-items: center;
+          .logo {
+            width: 100px;
+          }
+          .menu {
+            display: block;
+            width: 24px;
+            height: 24px;
+            img {
+              width: 24px;
+              height: 24px;
+            }
+          }
+        }
+        .navbar {
+          display: none;
+          background-color: $pureblack;
+          width: 100%;
+          padding: 10px;
+          &.activeMenu {
+            display: block;
+          }
+          .list {
+            flex-direction: column;
+            margin-top: 0;
+            width: 100%;
+            .list-item {
+              a {
+                width: 100%;
+                display: inline-block;
+                &:hover::after {
+                  width: 20%;
+                }
+              }
+            }
+          }
+        }
+      }
+      .language {
+        position: absolute;
+        top: 50px;
+        right: 50px;
+      }
     }
   }
 }

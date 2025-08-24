@@ -82,7 +82,10 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.header .container .row .logo a {
+.header .container .row .logo-menu .menu {
+  display: none;
+}
+.header .container .row .logo-menu .logo a {
   color: #fff;
   font-family: "Figtree", sans-serif;
   font-size: 32px;
@@ -121,6 +124,62 @@ body {
   justify-content: flex-end;
 }
 
+@media (max-width: 768px) {
+  .header .container {
+    width: 100%;
+  }
+  .header .container .row {
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative;
+  }
+  .header .container .row .logo-menu {
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+  .header .container .row .logo-menu .logo {
+    width: 100px;
+  }
+  .header .container .row .logo-menu .menu {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+  .header .container .row .logo-menu .menu img {
+    width: 24px;
+    height: 24px;
+  }
+  .header .container .row .navbar {
+    display: none;
+    background-color: #000;
+    width: 100%;
+    padding: 10px;
+  }
+  .header .container .row .navbar.activeMenu {
+    display: block;
+  }
+  .header .container .row .navbar .list {
+    flex-direction: column;
+    margin-top: 0;
+    width: 100%;
+  }
+  .header .container .row .navbar .list .list-item a {
+    width: 100%;
+    display: inline-block;
+  }
+  .header .container .row .navbar .list .list-item a:hover::after {
+    width: 20%;
+  }
+  .header .container .language {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+  }
+}
 .footer {
   margin: 64px 0;
 }
