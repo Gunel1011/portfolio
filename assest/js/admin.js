@@ -197,7 +197,6 @@ btn.addEventListener("click", (e) => {
   } else {
     addProject(nameValue, dataValue, file);
   }
-  
   writeAdminCard();
   closeModal();
   saveAdmin();

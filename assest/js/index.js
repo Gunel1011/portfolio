@@ -305,6 +305,8 @@ const check = (e) => {
       message: message.value,
     });
     console.log(formData);
+    form.classList.remove("block");
+    formOverley.classList.remove("block");
   }
 };
 formBtn.addEventListener("click", check);
