@@ -182,3 +182,189 @@
     }
   }
 }
+@media(max-width:768px){
+  .about {
+  display: none;
+  align-items: center;
+  margin-top: 80px;
+  .container {
+    .row {
+      flex-direction: column;
+      .about-me {
+        display: flex;
+        width: 100%;
+        height: 421px;
+        background-color: $white;
+        border-radius: 32px;
+        .about-content {
+          width: 684px;
+          padding: 62px 0 72px 72px;
+          .title-about {
+            font-size: 80px;
+            font-weight: 700;
+            font-family: "Figtree", sans-serif;
+            color: $pureWhite;
+          }
+          .intro-about {
+            font-size: 20px;
+            font-weight: 400;
+            color: $pureWhite;
+            margin-top: 23px;
+          }
+          .dev-skills {
+            display: flex;
+            gap: 8px;
+            margin-top: 24px;
+            .skill {
+              font-size: 18px;
+              font-weight: 600;
+              color: $pureWhite;
+              padding: 16px 24px;
+              border-radius: 100px;
+              cursor: pointer;
+              &.blue {
+                background-color: $blue;
+              }
+              &.green {
+                background-color: $green;
+              }
+              &.purple {
+                background-color: $purple;
+              }
+              &.red {
+                background-color: $red;
+              }
+              &.yellow {
+                background-color: $yellow;
+              }
+            }
+          }
+        }
+        .img {
+          width: 458px;
+          height: 421px;
+          overflow: hidden;
+          border-radius: 0 0 32px 0;
+          img {
+            width: 100%;
+            height: 421px;
+            object-fit: cover;
+            border-radius: 32px;
+          }
+        }
+      }
+      .all-expernce {
+        display: flex;
+        .experince {
+          background-color: $white;
+          width: 507px;
+          padding: 64px;
+          border-radius: 32px;
+          margin-top: 16px;
+          .experience-list {
+            display: flex;
+            flex-direction: column;
+            .list-item-exprence {
+              display: flex;
+              align-items: center;
+              gap: 33px;
+              margin-top: 20px;
+              .iocn {
+                width: 46px;
+                height: 46px;
+              }
+              .content {
+                .text {
+                  font-size: 24px;
+                  font-weight: 400;
+                  color: $pureWhite;
+                }
+                .all-year {
+                  display: flex;
+                  gap: 10px;
+                  .year {
+                    font-size: 48px;
+                    font-weight: 600;
+                    color: $pureWhite;
+                  }
+                  .year-text {
+                    font-size: 48px;
+                    font-weight: 600;
+                    color: $pureWhite;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .swiper {
+          width: 717px;
+          height: 100%;
+          margin-top: 16px;
+          border-radius: 32px;
+          margin-left: 16px;
+          .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: $white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 450px;
+            .all-card {
+              .icon {
+                text-align: start;
+                margin-top: 12px;
+                img {
+                  width: 111px;
+                  height: 96px;
+                }
+              }
+              .testimonil {
+                padding: 20px 72px 0 72px;
+                .text {
+                  font-size: 24px;
+                  font-weight: 500;
+                  line-height: 140%;
+                  color: $pureWhite;
+                  text-align: start;
+                }
+              }
+              .person {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin: 32px 0 64px 72px;
+                .person-img {
+                  width: 64px;
+                  height: 64px;
+
+                  img {
+                    width: 100%;
+                    height: 64px;
+                    border-radius: 50%;
+                  }
+                }
+                .person-info {
+                  .person-name {
+                    font-size: 18px;
+                    font-weight: 700;
+                    color: $pureWhite;
+                    text-align: start;
+                  }
+                  .person-work {
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: $pureWhite;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+}
