@@ -95,6 +95,9 @@
           align-items: center;
           .logo {
             width: 100px;
+            a {
+              font-size: 16px;
+            }
           }
           .menu {
             display: block;
@@ -111,6 +114,7 @@
           background-color: $pureblack;
           width: 100%;
           padding: 10px;
+          margin-top: 20px;
           &.activeMenu {
             display: block;
           }
@@ -132,7 +136,7 @@
       }
       .language {
         position: absolute;
-        top: 50px;
+        top: 30px;
         right: 50px;
       }
     }
